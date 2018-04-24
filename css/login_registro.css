@@ -1,0 +1,54 @@
+html:not(.form){
+	background-image: url("../img/background3.jpg");
+  background-size:cover ;
+  background-repeat: no-repeat;
+}
+
+.section-padding{
+  padding: 20px;
+}
+
+.form {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  border-radius: 10px;
+}
+
+.form-responsive.login {
+  width: 50%; 
+  height: 550px;
+  min-width: 400px;
+  max-width: 500px;
+  padding: 40px;
+
+}
+
+.form-responsive.registro {
+  width: 50%; 
+  height: 670px;
+  min-width: 500px;
+  max-width: 600px;
+  padding: 40px;
+
+}
+
+/*.form{
+	background: rgba(255, 255, 255,0.7);
+  transition: .2s;
+	z-index: 1;
+}*/
+
+.form/*:hover*/{
+  background: rgba(255, 255, 255,1);
+  transition: .2s;
+  z-index: 1;
+}
+
+.btn {
+  background-color:  #003459;
+}
+
+.btn:hover {
+  background-color: #194869;
+}

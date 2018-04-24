@@ -1,0 +1,64 @@
+/*Pagina Empresas.php*/
+.card-buscar{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.list-sectores{
+  overflow-y: scroll;
+  height: 150px;
+}
+
+.card-logo img{
+  height: 128px;
+  width: 128px;
+  object-fit: cover;
+}
+
+.card-logo{
+  height: 128px;
+  width: 128px;
+}
+
+.container{
+	padding: 10px;
+}
+
+/*Pagina info.php*/
+
+.img-cabecera {
+    transition: .2s;
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    align-self: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.cabecera-info {
+   margin-top: 10px;
+   background-color: rgba(255,255,255,.9);
+    transition: .2s;
+}
+
+
+.cabecera-info:hover {
+    background-color: rgba(255,255,255,1);
+    transition: .2s;
+}
+
+
+
+/* ------------------- Carousel Styling ------------------- */
+.fondo-carousel{
+  background-image: url("../img/bg2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

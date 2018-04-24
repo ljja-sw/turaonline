@@ -1,0 +1,75 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.principal{
+    background-color: #003459;
+}
+
+.card-header{
+  background-color: #003459;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #003459;
+}
+
+a {
+    color: #003459;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+.bq-pagina {
+  border-left: 3px solid #003459; }
+
+.bq-pagina .bq-title {
+    color: #003459; }
+
+.page-item .page-link{
+    color: #003459;
+}
+
+.badge-pagina{
+  background-color: #003459;
+}
+
+.nav-tabs{
+  background-color: #003459;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nav-tabs .nav-link{
+  color: white;
+}
+
+.nav-tabs .nav-link.active{
+  border-color: transparent;
+  background-color: #325c7a; 
+}
+
+.nav-tabs .nav-link:hover{
+  border-color: transparent;
+  background-color: #194869; 
+}
+
+.page-item.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: #003459;
+    border-color: #003459;
+}
+
+.link {
+    transition: 0.2s ease;
+    color: white;
+}
