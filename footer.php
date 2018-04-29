@@ -40,7 +40,7 @@
     <!--Copyright-->
     <div class="footer-copyright text-center">
         © 2018 Copyright:
-        <a href="#"> Turaonline.co </a>
+        <a href="#"> Turaonline.co</a>
     </div>
     <!--/.Copyright-->
 
@@ -52,6 +52,5 @@
   <script type="text/javascript" src="../vendor/sweetalert/js/sweetalert2.js" type="text/javascript"></script>
   <script type="text/javascript" src="../js/main.js"></script>
 <!--/.Scripts-->
-|
 </footer>
 <!--/.Footer-->

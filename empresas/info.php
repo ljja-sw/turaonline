@@ -1,25 +1,39 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    include '../php/Funciones.php';
+
+    $nit_empresa = $_GET['id'];
+    $funciones = new Funciones();
+
+    $empresa = $funciones->datosEmpresa($nit_empresa);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 
 <?php
-$titulo = "Empresa #1";
-require "../head.php";?>
+$titulo = $empresa->getNombre();
+require "../head.php";
+    if (file_exists($empresa->getFavico_empresa())) {
+        echo "<link rel='shortcut icon' href='$empresa->getFavico_empresa()'>";
+    }
+?>
+
 <link rel="stylesheet" type="text/css" href="../css/empresas.css">
 
 <body>
 
     <?php require "../navbar.php";?>
 
-<section class="fondo-dinamico">
+<section class="bg-info">
     	<div class="container">
     		<div class="card cabecera-info">
-               <img class="img-fluid img-cabecera" src="http://placehold.jp/500x500.png?text=Logo+Empresa">
+               <img class="img-fluid img-cabecera" src="<?php echo $empresa->getLogo_empresa() ?>">
                <div class="card-body text-center">
-                <h1>Empresa #1</h1>
-                <h6 class="text-muted">Sector, DIreccion</h6>
+                <h1 class="font-weight-bold"><?php echo $empresa->getNombre(); ?></h1>
+                <h6><?php echo $empresa->getSector().", ".$empresa->getDireccion(); ?></h6>
             </div>
         </div>
     </div>
@@ -46,8 +60,7 @@ require "../head.php";?>
 
 <section class="container">
 
-    <div class="row">
-        <div class="tab-content" id="myTabContent">
+        <div class="row tab-content" id="myTabContent">
           <div class="container tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="tab-resumen">
                 <div class="row">
                     <h1>Resumen</h1>
@@ -86,11 +99,7 @@ require "../head.php";?>
 
 </div>
 
-</div>
-
 </section>
-
-
 
 <?php include "../footer.php" ?>
 </body>

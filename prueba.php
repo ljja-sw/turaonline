@@ -10,3 +10,5 @@ echo 'Dependiendo del correo se le asígna un nombre de usuario y puede iniciar 
 echo 'Ejemplo: <br>';
 echo 'Correo: '.$_SESSION['correo']."<br>";
 echo 'Username: @'.$user;
+
+

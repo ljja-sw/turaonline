@@ -53,6 +53,12 @@
     transition: .2s;
 }
 
+.bg-info{
+  background-image: url("../img/empresas/bg-info2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
 
 
 /* ------------------- Carousel Styling ------------------- */

@@ -15,7 +15,7 @@ $sector = array();
 
 if(mysqli_num_rows($resultado) > 0){
     while($row = mysqli_fetch_assoc($resultado)){
-        $sector[] = utf8_encode($row['nombre_sector']);
+        $sector[] = $row['nombre_sector'];
 
     }
 		header('HTTP/1.1 200 Ok');

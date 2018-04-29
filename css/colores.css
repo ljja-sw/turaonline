@@ -54,12 +54,12 @@ a:focus {
 
 .nav-tabs .nav-link.active{
   border-color: transparent;
-  background-color: #325c7a; 
+  background-color: #325c7a;
 }
 
 .nav-tabs .nav-link:hover{
   border-color: transparent;
-  background-color: #194869; 
+  background-color: #194869;
 }
 
 .page-item.active .page-link {

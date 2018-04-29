@@ -84,7 +84,7 @@ require "head.php" ?>
 <section class="container">
 
     <div class="row">
-        <!-- Sidebar -->
+    <!-- Sidebar -->
         <div class="col-md-4"> 
 
             <div class="card">
@@ -99,9 +99,9 @@ require "head.php" ?>
           <div class="card">
             <h6 class="card-header principal text-white">Sector</h6>
             <ul class="list-group list-group-flush list-sectores">
-       <!--          <?php for ($i=0; $i < 10; $i++) { ?>
+                 <?php for ($i=0; $i < 10; $i++) { ?>
                 <a href="#" class="list-group-item">Item <?php echo $i+1 ?></a>
-                <?php } ?> -->
+                <?php } ?>
             </ul>
 
         </div>
