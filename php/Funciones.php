@@ -1,31 +1,37 @@
 <?php 
 include 'conexion_db.php';
+include 'obj/empresa.php';
 /**
 * 
 */
-$BD = new Conexion();
 
 class Funciones
 {
 
-function ejecutarQuery($query)
-	{
-		$C = new Conexion();
-		$link = $C->conectar();
+function ejecutarQuery($query){
+		$BD = new Conexion();
+		$link = $BD->conectar();
 		$resultado = mysqli_query($link,$query);
-
 		return $resultado;
 	}
 
-function sectorOptions(){	{
-		$query = "SELECT * FROM sector_empresarial";
-		$resultado = $this->ejecutarQuery($query);
-		if (mysqli_num_rows($resultado)>0) {
-			while ($fila= mysqli_fetch_assoc($resultado)) { ?>
-			<option value="<?php echo $fila['id_sector'] ?>"><?php echo utf8_encode($fila['nombre_sector']);?></option>
-			<?php 
-		}
+function datosEmpresa($nit_empresa){
+	$empresa = new Empresa();
+	$query = "SELECT * FROM empresas WHERE nit='".$nit_empresa."';";
+	$resultado = $this->ejecutarQuery($query);
+
+	while ($fila = mysqli_fetch_assoc($resultado)) {
+		$empresa->setLogo_empresa("../store/empresas/".$fila['nit']."/img/"."300_".$fila['id_empresa'].".png");
+	    $empresa->setFavico_empresa("../store/empresas/".$fila['nit']."/img/"."128_".$fila['id_empresa'].".png");
+	    $empresa->setNombre($fila['nombre']);
+	    $empresa->setSector($this->getNombreSector($fila['sector']));
+	    $empresa->setCorreo($fila['correo']);
+	    $empresa->setNit($fila['nit']);
+	    $empresa->setTelefono($fila['telefono']);
+	    $empresa->setDireccion($fila['direccion']);
+	    $empresa->setDescripcion($fila['descripcion']);
 	}
+	return $empresa;
 }
 
 function sectorList(){
@@ -39,11 +45,13 @@ function regitrarSector($nombre_sector){
 		echo "Sector Registrado";
 	}else{
 		echo "Hubo un error";
-	}
-}}
+		}
+   	}
 
+function getNombreSector($id_sector){
+	$query = "SELECT nombre_sector FROM sector_empresarial WHERE id_sector=".$id_sector.";";
+	$resultado = $this->ejecutarQuery($query);
+	$fila = mysqli_fetch_assoc($resultado);
+	return  $fila['nombre_sector'];
+   	}
 }
-
-
-
-?>

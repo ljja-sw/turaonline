@@ -46,51 +46,51 @@ function registro_aspirantes(){
 	}
 }
 
-	function registro_empresas(){
-		$C = new Conexion();
-		$link = $C->conectar();
-		
-		$sector_input   = mysqli_real_escape_string($link,$_POST['sector']);
-		$query_sector = "SELECT id_sector FROM sector_empresarial where nombre_sector='".$sector_input."'";
-		$resultado_sector = mysqli_query($link,$query_sector);
+function registro_empresas(){
+	$C = new Conexion();
+	$link = $C->conectar();
+	
+	$sector_input   = mysqli_real_escape_string($link,$_POST['sector']);
+	$query_sector = "SELECT id_sector FROM sector_empresarial where nombre_sector='".$sector_input."'";
+	$resultado_sector = mysqli_query($link,$query_sector);
 
-		if (mysqli_num_rows($resultado_sector)>0) {
-			$array_sector = mysqli_fetch_assoc($resultado_sector);
-			$sector = $array_sector['id_sector'];
-		} else {
+	if (mysqli_num_rows($resultado_sector)>0) {
+		$array_sector = mysqli_fetch_assoc($resultado_sector);
+		$sector = $array_sector['id_sector'];
+	} else {
 		$query_sector = "INSERT INTO sector_empresarial VALUES (NULL,'".$sector_input."');";
 		$resultado_sector = mysqli_query($link,$query_sector);
 		$sector = mysqli_insert_id($link);
+	}
+
+	$nombre       	= mysqli_real_escape_string($link,$_POST['nombre']);
+	$correo       	= mysqli_real_escape_string($link,$_POST['correo']);
+	$numero_tel   	= mysqli_real_escape_string($link,$_POST['telefono']);
+	$nit       		= mysqli_real_escape_string($link,$_POST['nit']);
+	$direccion    	= mysqli_real_escape_string($link,$_POST['direccion']);
+	$contrasena   	= password_hash( $_POST['contrasena'], PASSWORD_BCRYPT, array('cost' => 11));
+	$directorio_personal = "../store/empresas/".$nit;
+
+	$sql = "INSERT INTO empresas (`nombre`,`sector`,`correo`,`hash_contrasena`,`nit`,`direccion`,`telefono`,`estado`,`descripcion`) VALUES('".$nombre."',".$sector.",'".$correo."','".$contrasena."','".$nit."','".$direccion."','".$numero_tel."','En Espera','¿En que se especializa esta empresa?');";
+
+	$resultado = mysqli_query($link,$sql);
+
+	if(!$resultado){
+		$errorno =  mysqli_errno($link);
+		$error = mysqli_error($link);
+		switch ($errorno) {
+			case '1062':
+			header('HTTP/1.1 500 Ya existe una empresa registrada con estos datos');
+			break;
+			default:
+			header('HTTP/1.1 Hubo un error');
+			break;
 		}
-
-		$nombre       	= mysqli_real_escape_string($link,$_POST['nombre']);
-		$correo       	= mysqli_real_escape_string($link,$_POST['correo']);
-		$numero_tel   	= mysqli_real_escape_string($link,$_POST['telefono']);
-		$nit       		= mysqli_real_escape_string($link,$_POST['nit']);
-		$direccion    	= mysqli_real_escape_string($link,$_POST['direccion']);
-		$contrasena   	= password_hash( $_POST['contrasena'], PASSWORD_BCRYPT, array('cost' => 11));
-		$directorio_personal = "../store/empresas/".$nit;
-
-		$sql = "INSERT INTO empresas (`nombre`,`sector`,`correo`,`hash_contrasena`,`nit`,`direccion`,`telefono`,`estado`,`descripcion`) VALUES('".$nombre."',".$sector.",'".$correo."','".$contrasena."','".$nit."','".$direccion."','".$numero_tel."','En Espera','¿En que se especializa esta empresa?');";
-
-		$resultado = mysqli_query($link,$sql);
-
-		if(!$resultado){
-			$errorno =  mysqli_errno($link);
-			$error = mysqli_error($link);
-			switch ($errorno) {
-				case '1062':
-				header('HTTP/1.1 500 Ya existe una empresa registrada con estos datos');
-				break;
-				default:
-				header('HTTP/1.1 500 Ya existe una empresa registrada con estos datos');
-				break;
-			}
-		}else{
-			echo "Empresa Registrada";
+	}else{
+		echo "Empresa Registrada";
 		mkdir($directorio_personal, 0777, true);
 		mkdir($directorio_personal."/img", 0777, true);
 		mkdir($directorio_personal."/docs", 0777, true);
-		}
-		mysqli_close($link);
 	}
+	mysqli_close($link);
+}

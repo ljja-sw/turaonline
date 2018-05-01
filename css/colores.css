@@ -1,9 +1,9 @@
 body {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
 
 .principal{
-    background-color: #003459;
+  background-color: #003459;
 }
 
 .card-header{
@@ -12,64 +12,103 @@ body {
 
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #003459;
-}
-
-a {
-    color: #003459;
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
-
-a:hover,
-a:focus {
-    text-decoration: none;
-}
-
-.bq-pagina {
-  border-left: 3px solid #003459; }
-
-.bq-pagina .bq-title {
-    color: #003459; }
-
-.page-item .page-link{
-    color: #003459;
-}
-
-.badge-pagina{
+  color: #fff;
   background-color: #003459;
 }
 
-.nav-tabs{
-  background-color: #003459;
-  padding: 10px;
-  border-radius: 5px;
-}
+.btn-pagina {
+  background-color: #003459 !important;
+  color: #fff !important; }
+  .btn-primary:hover {
+    background-color: #194869; }
+    .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+      background-color: #194869; }
+      .btn-primary.dropdown-toggle {
+        background-color: #4285F4 !important; }
+        .btn-primary.dropdown-toggle:hover, .btn-primary.dropdown-toggle:focus {
+          background-color: #194869 !important; }
+          .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
+          .show > .btn-primary.dropdown-toggle {
+            background-color: #4285F4 !important; }
 
-.nav-tabs .nav-link{
-  color: white;
-}
 
-.nav-tabs .nav-link.active{
-  border-color: transparent;
-  background-color: #325c7a; 
-}
+            .btn-outline-pagina {
+              border: 2px solid #003459;
+              color: #003459 !important;
+              background-color: transparent; }
+              .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary:active:focus, .btn-outline-primary.active {
+                background-color: transparent;
+                color: #4285F4;
+                border-color: #4285F4; }
+                .btn-outline-primary:not([disabled]):not(.disabled):active, .btn-outline-primary:not([disabled]):not(.disabled).active,
+                .show > .btn-outline-primary.dropdown-toggle {
+                  background-color: transparent !important;
+                  border-color: #4285F4 !important; }
 
-.nav-tabs .nav-link:hover{
-  border-color: transparent;
-  background-color: #194869; 
-}
 
-.page-item.active .page-link {
-    z-index: 2;
-    color: #fff;
-    background-color: #003459;
-    border-color: #003459;
-}
 
-.link {
-    transition: 0.2s ease;
-    color: white;
-}
+                  a {
+                    color: #003459;
+                    text-decoration: none;
+                    cursor: pointer;
+                    -webkit-tap-highlight-color: transparent;
+                  }
+
+                  a:hover,
+                  a:focus {
+                    text-decoration: none;
+                  }
+
+                  .modal-dialog.modal-notify.modal-info .badge, .modal-dialog.modal-notify.modal-info .modal-header{
+                    background-color: #003459;
+                  }
+
+                  .modal-dialog.modal-notify.modal-info .fa{
+                    color: #003459;
+                  }
+
+                  .bq-pagina {
+                    border-left: 3px solid #003459; }
+
+                    .bq-pagina .bg-title {
+                      color: #003459; }
+
+                      .page-item .page-link{
+                        color: #003459;
+                      }
+
+                      .badge-pagina{
+                        background-color: #003459;
+                      }
+
+                      .nav-tabs{
+                        background-color: #003459;
+                        padding: 10px;
+                        border-radius: 5px;
+                      }
+
+                      .nav-tabs .nav-link{
+                        color: white;
+                      }
+
+                      .nav-tabs .nav-link.active{
+                        border-color: transparent;
+                        background-color: #325c7a;
+                      }
+
+                      .nav-tabs .nav-link:hover{
+                        border-color: transparent;
+                        background-color: #194869;
+                      }
+
+                      .page-item.active .page-link {
+                        z-index: 2;
+                        color: #fff;
+                        background-color: #003459;
+                        border-color: #003459;
+                      }
+
+                      .link {
+                        transition: 0.2s ease;
+                        color: white;
+                      }

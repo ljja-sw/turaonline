@@ -15,11 +15,8 @@ require "head.php" ?>
 
     <section class="container-fluid padding cabecera">
         <div class="row">
-            <div class="col-md-2">
 
-            </div>
-
-            <div class="col-md-8">
+            <div class="col-md-10 my-3">
                 <!--Carousel Wrapper-->
                 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
                     <!--Indicators-->
