@@ -2,7 +2,7 @@ body {
   background-color: #f8f9fa;
 }
 
-.principal{
+.bg-pagina{
   background-color: #003459;
 }
 
@@ -19,31 +19,31 @@ body {
 .btn-pagina {
   background-color: #003459 !important;
   color: #fff !important; }
-  .btn-primary:hover {
-    background-color: #194869; }
-    .btn-primary:focus, .btn-primary:active, .btn-primary.active {
-      background-color: #194869; }
-      .btn-primary.dropdown-toggle {
+  .btn-pagina:hover {
+    background-color: #004576; }
+    .btn-pagina:focus, .btn-pagina:active, .btn-pagina.active {
+      background-color: #004576; }
+      .btn-pagina.dropdown-toggle {
         background-color: #4285F4 !important; }
-        .btn-primary.dropdown-toggle:hover, .btn-primary.dropdown-toggle:focus {
-          background-color: #194869 !important; }
-          .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
-          .show > .btn-primary.dropdown-toggle {
-            background-color: #4285F4 !important; }
+        .btn-pagina.dropdown-toggle:hover, .btn-pagina.dropdown-toggle:focus {
+          background-color: #004576 !important; }
+          .btn-pagina:not([disabled]):not(.disabled):active, .btn-pagina:not([disabled]):not(.disabled).active,
+          .show > .btn-pagina.dropdown-toggle {
+            background-color: #004576 !important; }
 
 
             .btn-outline-pagina {
               border: 2px solid #003459;
               color: #003459 !important;
               background-color: transparent; }
-              .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary:active:focus, .btn-outline-primary.active {
+              .btn-outline-pagina:hover, .btn-outline-pagina:focus, .btn-outline-pagina:active, .btn-outline-pagina:active:focus, .btn-outline-pagina.active {
                 background-color: transparent;
-                color: #4285F4;
-                border-color: #4285F4; }
-                .btn-outline-primary:not([disabled]):not(.disabled):active, .btn-outline-primary:not([disabled]):not(.disabled).active,
-                .show > .btn-outline-primary.dropdown-toggle {
+                color: #004576;
+                border-color: #004576; }
+                .btn-outline-pagina:not([disabled]):not(.disabled):active, .btn-outline-pagina:not([disabled]):not(.disabled).active,
+                .show > .btn-outline-pagina.dropdown-toggle {
                   background-color: transparent !important;
-                  border-color: #4285F4 !important; }
+                  border-color: #004576 !important; }
 
 
 

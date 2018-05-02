@@ -7,9 +7,11 @@
 $titulo = "Ofertas";
 require "head.php" ?>
 <body>
-    <link rel="stylesheet" type="text/css" href="../css/ofertas.css">
+    <link rel="stylesheet" type="text/css" href="/css/ofertas.css">
 <?php include 'navbar.php';?>
-        
-    <?php include 'footer.php'; ?>
+        <div class="div-juiner">
+        	<h1>Hola Mundo</h1>
+        </div>
+ <?php include 'footer.php'; ?>
   </body>
 </html>

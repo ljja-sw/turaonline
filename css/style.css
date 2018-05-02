@@ -17,7 +17,6 @@
   border-radius:30px;
   object-fit : cover;
 }
-.modal { overflow-y: scroll; }
 
 .hidden{  display: none; }
 

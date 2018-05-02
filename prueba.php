@@ -1,14 +1,26 @@
-<?php 
-session_start();
+<!DOCTYPE html>
+<html>
+<?php include "head.php" ?>
+<link rel="stylesheet" href="pruebas/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 
-$parts = explode('@', $_SESSION['correo']);
 
-$user = $parts[0];
-// Stick the @ back onto the domain since it was chopped off.
+<body>
+	<?php require 'modals/publicar_oferta.php' ?>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#publicar_oferta">
+    modal
+</button>
 
-echo 'Dependiendo del correo se le asígna un nombre de usuario y puede iniciar sesion con el: <br>';
-echo 'Ejemplo: <br>';
-echo 'Correo: '.$_SESSION['correo']."<br>";
-echo 'Username: @'.$user;
+<?php include "footer.php" ?>
+<script src="pruebas/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="pruebas/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js"></script>
+
+<script type="text/javascript">
+	$('#datepicker').datepicker({    
+		format: 'dd/mm/yyyy',
+		autoclose: true,
+		language: 'es'})
+</script>
+</body>
+</html>
 
 

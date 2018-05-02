@@ -1,10 +1,10 @@
 <!-- Central Modal Medium Info -->
 <div class="modal fade" id="sideModalTLInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-notify modal-info" role="document">
+  <div class="modal-dialog modal-notify" role="document">
     <!--Content-->
     <div class="modal-content">
       <!--Header-->
-      <div class="modal-header">
+      <div class="modal-header bg-pagina">
         <p class="heading lead">Buscar</p>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

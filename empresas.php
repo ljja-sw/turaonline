@@ -85,18 +85,10 @@ require "head.php" ?>
 			<!-- Sidebar -->
 			<div class="col-md-4 "> 
 
-				<div class="card">
-					<div class="card-buscar">
-						<form class="form-inline my-2 my-lg-0">
-						  <input id="buscar" class="form-control mr-sm-2" type="search" placeholder="Empresa, Sector" aria-label="Buscar">
-					  </form>
-					  <button class="btn principal text-white">Buscar</button>
-				  </div>
-			  </div>
-
 			  <div class="card">
 				<h6 class="card-header principal text-white">Sector</h6>
-				<ul class="list-group list-group-flush list-sectores">
+				
+				<ul class="card-body clist-group list-group-flush list-sectores">
 				   <?php for ($i=0; $i < 10; $i++) { ?>
 				   <a href="#" class="list-group-item">Item <?php echo $i+1 ?></a>
 				   <?php } ?>

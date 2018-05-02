@@ -1,4 +1,14 @@
 
-.container-lateral{
-	width: 100px;
+.div-juiner{
+	height: 400px;
+	width: 500px;
+	margin: 0 auto;
+	background-color: gray;
+	margin-top: 10px;
+	border: 4px red solid;
+}
+
+.div-juiner h1{
+	padding: 35% 0;
+	text-align :center;
 }
