@@ -93,7 +93,6 @@ require "head.php" ?>
 				   <a href="#" class="list-group-item">Item <?php echo $i+1 ?></a>
 				   <?php } ?>
 			   </ul>
-
 		   </div>
 
 	   </div>

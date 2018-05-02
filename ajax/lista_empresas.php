@@ -46,11 +46,9 @@ if(mysqli_num_rows($resultado)>0){
 		</div>
 
 		<?php } }else{ ?>
-
 		<div class="text-center my-5">
 			<h1><i class="fi-x"></i></h1>
 			<h1 class="display-4">No hay Empresas para Mostrar</h1>
 			<strong><p>No te preocupes muy pronto estarán disponibles</p></strong>
 		</div>
-
 		<?php }

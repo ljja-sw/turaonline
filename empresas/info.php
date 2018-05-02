@@ -20,7 +20,6 @@ if (file_exists($empresa->getFavico_empresa())) { ?>
 <?php } ?>
 
 <link rel="stylesheet" type="text/css" href="/css/empresas.css">
-
 <body>
 
 <?php require "../navbar.php";?>
@@ -58,6 +57,9 @@ if (file_exists($empresa->getFavico_empresa())) { ?>
 
 <section class="container">
 
+<<<<<<< HEAD
+
+=======
     <div class="row tab-content" id="myTabContent">
       <div class="container tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="tab-resumen">
         <div class="row">

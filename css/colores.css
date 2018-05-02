@@ -63,52 +63,56 @@ body {
                     background-color: #003459;
                   }
 
-                  .modal-dialog.modal-notify.modal-info .fa{
-                    color: #003459;
+                  .nav-tabs .nav-link.active{
+                    border-color: transparent;
+                    background-color: #325c7a;
                   }
 
-                  .bq-pagina {
-                    border-left: 3px solid #003459; }
+                  .nav-tabs .nav-link:hover{
+                    border-color: transparent;
+                    background-color: #194869;
+                  }
 
-                    .bq-pagina .bg-title {
-                      color: #003459; }
 
-                      .page-item .page-link{
-                        color: #003459;
-                      }
+                  .bq-pagina .bg-title {
+                    color: #003459; }
 
-                      .badge-pagina{
-                        background-color: #003459;
-                      }
+                    .page-item .page-link{
+                      color: #003459;
+                    }
 
-                      .nav-tabs{
-                        background-color: #003459;
-                        padding: 10px;
-                        border-radius: 5px;
-                      }
+                    .badge-pagina{
+                      background-color: #003459;
+                    }
 
-                      .nav-tabs .nav-link{
-                        color: white;
-                      }
+                    .nav-tabs{
+                      background-color: #003459;
+                      padding: 10px;
+                      border-radius: 5px;
+                    }
 
-                      .nav-tabs .nav-link.active{
-                        border-color: transparent;
-                        background-color: #325c7a;
-                      }
+                    .nav-tabs .nav-link{
+                      color: white;
+                    }
 
-                      .nav-tabs .nav-link:hover{
-                        border-color: transparent;
-                        background-color: #194869;
-                      }
+                    .nav-tabs .nav-link.active{
+                      border-color: transparent;
+                      background-color: #325c7a;
+                    }
 
-                      .page-item.active .page-link {
-                        z-index: 2;
-                        color: #fff;
-                        background-color: #003459;
-                        border-color: #003459;
-                      }
+                    .nav-tabs .nav-link:hover{
+                      border-color: transparent;
+                      background-color: #194869;
+                    }
 
-                      .link {
-                        transition: 0.2s ease;
-                        color: white;
-                      }
+                    .page-item.active .page-link {
+                      z-index: 2;
+                      color: #fff;
+                      background-color: #003459;
+                      border-color: #003459;
+                    }
+
+                    .link {
+                      transition: 0.2s ease;
+                      color: white;
+                    }
