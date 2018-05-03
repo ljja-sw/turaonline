@@ -22,10 +22,15 @@
 					<div class="md-form d-flex align-items-center">
 						<i class="fa fa-calendar-alt prefix"></i>
 						<input type="text" class="form-control mb-2" id="datepicker" placeholder="Fecha de Vencimiento">
-					</div>
+					</div>	
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-outline-pagina">Vista Previa</button>
+					<label class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input">
+						<span class="custom-control-indicator"></span>
+						<span class="custom-control-description">Ofeta tipo <strong>Urgente</strong></span>
+					</label>
+					<a type="button" class="btn btn-outline-pagina">Vista Previa</a>
 					<button type="button" class="btn btn-pagina ">Publicar</button>
 				</div>
 			</form>
