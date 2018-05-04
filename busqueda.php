@@ -11,7 +11,7 @@ if (isset($_GET['b'])) {
 }
 
 $titulo = "Buscando: ".$busqueda;
-require "head.php"; 
+require "head.php";
 require 'php/Funciones.php';
 $funciones = new Funciones();
 ?>
@@ -52,7 +52,7 @@ $funciones = new Funciones();
 							<h1>Empresas</h1>
 						</div>
 						<div class="row">
-							
+
 						</div>
 					</div>
 					<div class="tab-pane fade" id="sectores" role="tabpanel">
@@ -60,16 +60,16 @@ $funciones = new Funciones();
 							<h1>Sectores</h1>
 						</div>
 						<div class="row">
-							<?php 
+							<?php
 							$query = "SELECT * FROM sector_empresarial WHERE nombre_sector RLIKE '^".$busqueda."';";
-							$resultado = $funciones->ejecutarQuery($query);
-							while ($fila = mysqli_fetch_assoc($resultado)) {?>
-									<a href="#" class="card col-md-4 mx-1">
-										<div class="card-body row">
-											<h5 class="card-title col-md-8 text-center"><?php echo $fila['nombre_sector'] ?></h5>
-											<i class="fa fa-info col-md-4 text-center"></i>
-										</div>
-									</a>
+							$resultado = $funciones->ejecutarQuery($query); ?>
+							<?php while($fila = mysqli_fetch_assoc($resultado)) { ?>
+					<div class="card card-body col-md-4 mx-2">
+    							<h4 class="card-title"><?php echo $fila['nombre_sector']; ?></h4>
+    				<div class="flex-row">
+        				<a href="#<?php echo $fila['id_sector'] ?>" class="card-link float-right">Ver Empresas <i class="fa fa-info"></i></a>
+    				</div>
+					</div>
 							<?php } ?>
 						</div>
 					</div>
@@ -78,7 +78,7 @@ $funciones = new Funciones();
 							<h1>Ofertas</h1>
 						</div>
 						<div class="row">
-							
+
 						</div>
 					</div>
 				</div>
@@ -87,11 +87,5 @@ $funciones = new Funciones();
 	</section>
 
 	<?php require 'footer.php'; ?>
-	<script type="text/javascript">
-		$("#buscar").on('shown.bs.modal', function(){
-			alert("Hello World!");
-		});  
-	</script>
 </body>
-
 </html>

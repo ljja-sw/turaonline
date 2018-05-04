@@ -5,6 +5,7 @@
 		padding-left: 3px;
 		height: 1100px;
 	}
+	
 	.fecha_publicacion, .Salario, .tipo_contrato, .tipo_jornada{
 		background-color: #3498DB;
 		position: relative;

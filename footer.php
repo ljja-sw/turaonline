@@ -1,8 +1,8 @@
 
 <!--Footer-->
-<footer class="page-footer font-small unique-color-dark pt-0">
+<footer class="page-footer font-small bg-pagina pt-0">
 
-    <div style="background-color: #6351ce;">
+    <div style="background-color: #002945;">
         <div class="container">
             <!--Grid row-->
             <div class="row py-4 d-flex align-items-center">

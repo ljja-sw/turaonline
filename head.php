@@ -11,15 +11,15 @@
     <!-- Bootstrap core CSS -->
     <link href="/vendor/mdb-bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/vendor/mdb-bootstrap/css/mdb.min.css" rel="stylesheet">
+    <!-- Sweetalert2 CSS -->
+    <link href="/vendor/sweetalert/css/sweetalert2.css" rel="stylesheet"/>
+    <!-- Boostrap date picker-->
+    <link rel="stylesheet" href="/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
+    <!-- Foundation CSS -->
+    <link href="/vendor/fontawesome/fontawesome-all.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
     <link href="/css/style.css" rel="stylesheet"/>
     <link href="/css/colores.css" rel="stylesheet"/>
-    <!-- Sweetalert2 CSS -->
-    <link href="/vendor/sweetalert/css/sweetalert2.css" rel="stylesheet"/>
-    <!-- Foundation CSS -->
-    <link href="/vendor/fontawesome/fontawesome-all.min.css" rel="stylesheet"/>
-    <!-- Boostrap date picker-->
-    <link rel="stylesheet" href="/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="http://placehold.jp/16x16.png?text=P">
     <link rel="apple-touch-icon" href="http://placehold.jp/57x57.png?text=P">

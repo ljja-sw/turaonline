@@ -2,8 +2,16 @@ body {
   background-color: #f8f9fa;
 }
 
+.bg-pagina-lighteen{
+  background-color: #004b80;
+}
+
 .bg-pagina{
   background-color: #003459;
+}
+
+.bg-pagina-darkeen{
+  background-color: #002945;
 }
 
 .card-header{
