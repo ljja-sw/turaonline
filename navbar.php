@@ -14,15 +14,19 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav m1-auto justify-items-center">
         <li class="nav-item">
-          <a class="nav-link link cursor-dedo" href="../empresas.php">Empresas</a>
+          <a class="nav-link link cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link link cursor-dedo" href="../ofertas.php">Ofertas de Trabajo</a>
+          <a class="nav-link link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto align-items-center">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#sideModalTLInfo"><i class="fa fa-search"></i></a>
+          <a class="nav-link" data-toggle="modal" data-target="#buscar"><i class="fa fa-search"></i> Buscar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#publicarOferta"><i class="fa fa-indent"></i>
+Publicar Oferta</a>
         </li>
         <li class="nav-item">
           <a href="../mi/empresa.php">
@@ -50,15 +54,15 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav m1-auto align-items-center">
           <li class="nav-item">
-            <a class="nav-link link cursor-dedo" href="../empresas.php">Empresas</a>
+            <a class="nav-link link cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link cursor-dedo" href="../ofertas.php">Ofertas de Trabajo</a>
+            <a class="nav-link link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto align-items-center">
           <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#sideModalTLInfo"><i class="fa fa-search"></i></a>
+          <a class="nav-link" data-toggle="modal" data-target="#buscar"><i class="fa fa-search"></i> Buscar</a>
           </li>
           <li class="nav-item">
             <a href="../mi/perfil.php">
@@ -85,16 +89,14 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav m1-auto align-items-center">
               <li class="nav-item">
-                <a class="nav-link link cursor-dedo" href="../empresas.php">Empresas</a>
+                <a class="nav-link link cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link link cursor-dedo" href="../ofertas.php">Ofertas de Trabajo</a>
-              </li>
+            <a class="nav-link link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>              </li>
             </ul>
             <ul class="navbar-nav ml-auto align-items-center">
               <li class="nav-item">
-              	<a class="nav-link" data-toggle="modal" data-target="#sideModalTLInfo"><i class="fa fa-search"></i></a>
-              </li>
+          <a class="nav-link" data-toggle="modal" data-target="#buscar"><i class="fa fa-search"></i> Buscar</a>
               <li class="nav-item">
                 <a class="nav-link link float-center cursor-dedo" href="../inicio_sesion.php">Iniciar Sesión</a>
               </li>

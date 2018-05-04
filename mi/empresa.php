@@ -23,6 +23,7 @@ if ( $_SESSION["loggedin"] != true ) {
       <div class="card card-cabecera"><!-- Card prefil -->
         <div class="card-body">
           <div class="row align-items-center">
+
             <div class="div-foto col-md-6 col-sm-6">
               <form id="form_cambiar_foto" action="../php/cambiar_foto.php?c=logo" method="post" enctype="multipart/form-data">
                 <input type='file' id="img_perfil" name="img_perfil" accept="image/*" onchange="readURL(this);" />
@@ -33,7 +34,7 @@ if ( $_SESSION["loggedin"] != true ) {
 
             <div class="div-foto col-md-6 col-sm-6">
               <h2 class="display-responsive-4" id="nombre"><?php echo $_SESSION["nombre"]; ?>
-              <h3 id="sector_empresa"><?php echo $_SESSION["sector"]; ?></h3>
+                <h3 id="sector_empresa"><?php echo $_SESSION["sector"]; ?></h3>
                 <h6 class="" id="correo"><b>Correo:</b> <?php echo $_SESSION["correo"]; ?></h6>
               </div>
 
@@ -41,7 +42,7 @@ if ( $_SESSION["loggedin"] != true ) {
 
           </section>
 
-          <section class="container padding"><!-- Container Principal -->
+          <section class="container py-3"><!-- Container Principal -->
             <div class="row">
 
               <div class="col-md-6"> <!-- Col -->

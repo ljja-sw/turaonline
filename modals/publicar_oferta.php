@@ -1,4 +1,4 @@
-<div class="modal fade" id="publicar_oferta" tabindex="-1" role="dialog" aria-labelledby="publicar_oferta" aria-hidden="true">
+<div class="modal fade" id="publicarOferta" tabindex="-1" role="dialog" aria-labelledby="publicarOferta" aria-hidden="true">
 	<div class="modal-dialog " role="domcument">
 		<div class="modal-content">
 			<div class="modal-header bg-pagina">
@@ -16,16 +16,16 @@
 					</div>
 					<div class="md-form d-flex align-items-center">
 						<i class="fa fa-align-justify prefix"></i>
-						<textarea type="text" id="textareaPrefix" class="form-control md-textarea" rows="3"></textarea>
+						<textarea type="text" id="textareaPrefix" class="md-textarea md-textarea-auto form-control" rows="3"></textarea>
 						<label for="textareaPrefix">Descripcion</label>
 					</div>
 					<div class="md-form d-flex align-items-center">
 						<i class="fa fa-calendar-alt prefix"></i>
-						<input type="text" class="form-control mb-2" id="datepicker" placeholder="Fecha de Vencimiento">
+						<input type="text" class="form-control mb-2" id="fecha_vencimiento" placeholder="Fecha de Vencimiento">
 					</div>	
 				</div>
 				<div class="modal-footer">
-					<label class="custom-control custom-checkbox">
+					<label class="custom-control custom-checkbox mr-3">
 						<input type="checkbox" class="custom-control-input">
 						<span class="custom-control-indicator"></span>
 						<span class="custom-control-description">Ofeta tipo <strong>Urgente</strong></span>

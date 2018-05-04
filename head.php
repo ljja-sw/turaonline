@@ -16,6 +16,8 @@
     <link href="/vendor/sweetalert/css/sweetalert2.css" rel="stylesheet"/>
     <!-- Foundation CSS -->
     <link href="/vendor/fontawesome/fontawesome-all.min.css" rel="stylesheet"/>
+    <!-- Boostrap date picker-->
+    <link rel="stylesheet" href="/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="http://placehold.jp/16x16.png?text=P">
     <link rel="apple-touch-icon" href="http://placehold.jp/57x57.png?text=P">
@@ -23,4 +25,6 @@
     <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.jp/114x114.png?text=P">
   </head>
 
-<?php include 'modals/buscar.php'; ?>
+<?php include 'modals/buscar.php'; 
+      include 'modals/publicar_oferta.php';
+?>

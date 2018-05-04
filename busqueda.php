@@ -65,9 +65,9 @@ $funciones = new Funciones();
 							$resultado = $funciones->ejecutarQuery($query);
 							while ($fila = mysqli_fetch_assoc($resultado)) {?>
 									<a href="#" class="card col-md-4 mx-1">
-										<div class="row">
-											<h5 class="card-title col-md text-center"><?php echo $fila['nombre_sector'] ?></h5>
-											<i class="fa fa-info col-md text-center"></i>
+										<div class="card-body row">
+											<h5 class="card-title col-md-8 text-center"><?php echo $fila['nombre_sector'] ?></h5>
+											<i class="fa fa-info col-md-4 text-center"></i>
 										</div>
 									</a>
 							<?php } ?>
