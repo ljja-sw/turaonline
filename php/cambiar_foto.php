@@ -24,7 +24,7 @@ if(isset($_GET["c"]) && $_GET["c"] == "foto_perfil"){
 
     function cambiar_foto_p(){
         $upload_directory = "../store/aspirantes/".$_SESSION['cedula']."/img/";
-        $nombre_img=$_SESSION["id_usuario"];
+        $nombre_img=$_SESSION["cedula"];
         $img = $upload_directory.$nombre_img;
 
         if (!file_exists($img.".png")) {
@@ -42,7 +42,7 @@ if(isset($_GET["c"]) && $_GET["c"] == "foto_perfil"){
 
     function cambiar_logo(){
         $upload_directory = "../store/empresas/".$_SESSION['nit']."/img/"; 
-        $nombre_img=$_SESSION["id_empresa"];
+        $nombre_img=$_SESSION["nit"];
         $img = $upload_directory.$nombre_img;
 
         if (!file_exists($img.".png")) {

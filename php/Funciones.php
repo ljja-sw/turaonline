@@ -21,8 +21,8 @@ class Funciones
 		$resultado = $this->ejecutarQuery($query);
 
 		while ($fila = mysqli_fetch_assoc($resultado)) {
-			$empresa->setLogo_empresa("../store/empresas/".$fila['nit']."/img/"."300_".$fila['id_empresa'].".png");
-			$empresa->setFavico_empresa("../store/empresas/".$fila['nit']."/img/"."128_".$fila['id_empresa'].".png");
+			$empresa->setLogo_empresa("../store/empresas/".$fila['nit']."/img/"."300_".$fila['nit'].".png");
+			$empresa->setFavico_empresa("../store/empresas/".$fila['nit']."/img/"."128_".$fila['nit'].".png");
 			$empresa->setNombre($fila['nombre']);
 			$empresa->setSector($this->getNombreSector($fila['sector']));
 			$empresa->setCorreo($fila['correo']);

@@ -20,6 +20,4 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 session_start();
 $_SESSION["loggedin"] = false;
-$_SESSION["nombre_img"]="";
-
 ?>

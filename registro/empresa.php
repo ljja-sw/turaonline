@@ -1,7 +1,5 @@
 <?php 
 session_start(); 
-require '/php/Funciones.php';
-$func = new Funciones();
 ?>
 
 <!DOCTYPE html>

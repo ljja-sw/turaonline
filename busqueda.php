@@ -52,7 +52,26 @@ $funciones = new Funciones();
 							<h1>Empresas</h1>
 						</div>
 						<div class="row">
-
+							<?php
+							$query = "SELECT * FROM empresas WHERE nombre RLIKE '^".$busqueda."';";
+							$resultado = $funciones->ejecutarQuery($query); ?>
+							<?php while($fila = mysqli_fetch_assoc($resultado)) {
+							$img = "store/empresas/".$fila['nit']."/img/"."300_".$fila["nit"].".png"; ?>
+							<div class="card-body row">
+								<div class="col-md-3 my-3">
+									<div class="card-logo text-center">
+										<img src="<?php echo $img ?>">
+									</div>
+								</div>
+								<div class="col-md-7 align-self-center">
+									<h3 class="mt-0 font-weight-bold"><?php echo $fila["nombre"]; ?></h3>
+									<p class="h6 text-muted"><?php echo $fila["direccion"];?></p>
+								</div>
+								<div class="col-md-2 align-self-end">
+									<a class="float-right" href="empresas/info.php?id=<?php echo $fila['nit'] ?>">Info <i class="fa fa-arrow-right"></i> </a>
+								</div>
+							</div>
+							<?php } ?>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="sectores" role="tabpanel">
@@ -64,12 +83,12 @@ $funciones = new Funciones();
 							$query = "SELECT * FROM sector_empresarial WHERE nombre_sector RLIKE '^".$busqueda."';";
 							$resultado = $funciones->ejecutarQuery($query); ?>
 							<?php while($fila = mysqli_fetch_assoc($resultado)) { ?>
-					<div class="card card-body col-md-4 mx-2">
-    							<h4 class="card-title"><?php echo $fila['nombre_sector']; ?></h4>
-    				<div class="flex-row">
-        				<a href="#<?php echo $fila['id_sector'] ?>" class="card-link float-right">Ver Empresas <i class="fa fa-info"></i></a>
-    				</div>
-					</div>
+							<div class="card card-body col-md-4 mx-2">
+								<h4 class="card-title"><?php echo $fila['nombre_sector']; ?></h4>
+								<div class="flex-row">
+									<a href="#<?php echo $fila['id_sector'] ?>" class="card-link float-right">Ver Empresas</a>
+								</div>
+							</div>
 							<?php } ?>
 						</div>
 					</div>

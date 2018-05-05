@@ -26,11 +26,7 @@
 		 */
 		public function getLogo_empresa()
 		{
-			if (file_exists($this->logo_empresa)) {
 				return $this->logo_empresa;
-			}else{
-				return "../store/default/empresas.png";
-			}
 		}
 		/**
 		 * @return type

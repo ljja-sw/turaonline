@@ -38,12 +38,17 @@ function registro_aspirantes(){
 		}
 	}else{
 		header('HTTP/1.1 200');
-		echo "Registro Completo $nombre $apellido";
 		mkdir($directorio_personal, 0777, true);
 		mkdir($directorio_personal."/img", 0777, true);
 		mkdir($directorio_personal."/docs", 0777, true);
-		mysqli_close($link);
+		copy("../store/default/aspirantes.png",$directorio_personal."/img/".$cedula.".png");
+		$tamaños = array('500_'=> 500,'300_' => 300,'128_' => 128 );
+		foreach ($tamaños as $key => $value) {
+			copy("../store/default/aspirantes.png",$directorio_personal."/img/".$key.$cedula.".png");
+		}
+		echo "Registro Completo $nombre $apellido";
 	}
+	mysqli_close($link);
 }
 
 function registro_empresas(){
@@ -87,10 +92,17 @@ function registro_empresas(){
 			break;
 		}
 	}else{
-		echo "Empresa Registrada";
 		mkdir($directorio_personal, 0777, true);
 		mkdir($directorio_personal."/img", 0777, true);
 		mkdir($directorio_personal."/docs", 0777, true);
+
+		copy("../store/default/empresas.png",$directorio_personal."/img/".$nit.".png");
+		$tamaños = array('500_'=> 500,'300_' => 300,'128_' => 128 );
+		foreach ($tamaños as $key => $value) {
+			copy("../store/default/empresas.png",$directorio_personal."/img/".$key.$nit.".png");
+		}
+		echo "Empresa Registrada";
+
 	}
 	mysqli_close($link);
 }

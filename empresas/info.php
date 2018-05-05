@@ -14,12 +14,9 @@ $empresa = $funciones->datosEmpresa($_GET['id']);
 
 <?php
 $titulo = $empresa->getNombre();
-require "../head.php";
-if (file_exists($empresa->getFavico_empresa())) { ?>
-<link rel='shortcut icon' href='<?php echo $empresa->getFavico_empresa() ?>'>
-<?php } ?>
+require "../head.php";?>
 
-<link rel="stylesheet" type="text/css" href="/css/empresas.css">
+<link rel='shortcut icon' href='<?php echo $empresa->getFavico_empresa() ?>'>
 <body>
 
 <?php require "../navbar.php";?>

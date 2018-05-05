@@ -32,7 +32,7 @@ function login_aspirantes(){
 			if(password_verify($_POST["inputContrasenia"],$_SESSION["hash_contrasenia"])){
 
 				if ($handle = opendir("../store/aspirantes/".$_SESSION['cedula'])) {
-					$file = mysqli_real_escape_string($link,$_SESSION['id_usuario']);
+					$file = mysqli_real_escape_string($link,$_SESSION['cedula']);
 
 					if (file_exists("../store/aspirantes/".$_SESSION['cedula']."/img/".$file.".png")) {
 						$_SESSION["img"] = "../store/aspirantes/".$_SESSION['cedula']."/img/img/".$file.".png";
@@ -90,7 +90,7 @@ function login_aspirantes(){
 				if(password_verify($_POST["inputContrasenia"],$_SESSION["hash_contrasenia"])){
 
 					if ($handle = opendir("../store/empresas/".$_SESSION['nit'])) {
-						$file = mysqli_real_escape_string($link,$_SESSION["id_empresa"]);
+						$file = mysqli_real_escape_string($link,$_SESSION["nit"]);
 
 						if (file_exists("../store/empresas/".$_SESSION['nit']."/img/".$file.".png")) {
 							$_SESSION["img"] = "../store/empresas/".$_SESSION['nit']."/img/img/".$file.".png";

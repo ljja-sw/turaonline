@@ -13,17 +13,10 @@ clearstatcache();
 if(mysqli_num_rows($resultado)>0){
 
 	while ($fila = mysqli_fetch_assoc($resultado)) {
-
-		if (opendir("store/empresas/".$fila['nit'])) {
-			$file = mysqli_real_escape_string($link,$fila["id_empresa"]);
-			if (file_exists("store/empresas/".$fila['nit']."/img/".$file.".png")) {
-				$img = $fila['nit']."/img/".$file.".png";
-			}
-			
-		}
 		$query_sector = "SELECT nombre_sector FROM sector_empresarial WHERE id_sector=".$fila["sector"].";";
 		$resultado_s = mysqli_query($link,$query_sector);
 		$sector_empresa = mysqli_fetch_assoc($resultado_s);
+		$img = $fila['nit']."/img/"."300_".$fila['nit'].".png";
 		?>
 
 
