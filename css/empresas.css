@@ -1,14 +1,4 @@
 /*Pagina Empresas.php*/
-.card-buscar{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-}
-
 .list-sectores{
   overflow-y: scroll;
   height: 150px;
@@ -58,11 +48,3 @@
 }
 
 
-
-/* ------------------- Carousel Styling ------------------- */
-.fondo-carousel{
-  background-image: url("../img/bg2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}

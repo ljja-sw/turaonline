@@ -14,10 +14,10 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav m1-auto justify-items-center">
         <li class="nav-item">
-          <a class="nav-link link cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
+          <a class="nav-link  cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>
+          <a class="nav-link  cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto align-items-center">
@@ -34,7 +34,7 @@ Publicar Oferta</a>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link link cursor-dedo" data-toggle="modal" id="cerrar_sesion">
+          <a class="nav-link cursor-dedo" data-toggle="modal" id="cerrar_sesion">
             <span data-toggle="tooltip" title="Cerrar sesión" class="oi oi-account-logout"></span>
           Cerrar Sesión</a>
         </li>
@@ -54,10 +54,10 @@ Publicar Oferta</a>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav m1-auto align-items-center">
           <li class="nav-item">
-            <a class="nav-link link cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
+            <a class="nav-link cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>
+            <a class="nav-link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto align-items-center">
@@ -69,7 +69,7 @@ Publicar Oferta</a>
               <img class="cursor-dedo img-fluid avatar" id="blah" src="<?php echo $_SESSION["avatar"]; ?>" alt="Mi Foto"/></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link cursor-dedo" data-toggle="modal" id="cerrar_sesion">
+              <a class="nav-link cursor-dedo" data-toggle="modal" id="cerrar_sesion">
                 <span data-toggle="tooltip" title="Cerrar sesión" class="oi oi-account-logout"></span>
               Cerrar Sesión</a>
             </li>
@@ -89,19 +89,19 @@ Publicar Oferta</a>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav m1-auto align-items-center">
               <li class="nav-item">
-                <a class="nav-link link cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
+                <a class="nav-link cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
               </li>
               <li class="nav-item">
-            <a class="nav-link link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>              </li>
+            <a class="nav-link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>              </li>
             </ul>
             <ul class="navbar-nav ml-auto align-items-center">
               <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#buscar"><i class="fa fa-search"></i> Buscar</a>
               <li class="nav-item">
-                <a class="nav-link link float-center cursor-dedo" href="../inicio_sesion.php">Iniciar Sesión</a>
+                <a class="nav-link float-center cursor-dedo" href="../inicio_sesion.php">Iniciar Sesión</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link link float-center cursor-dedo" href="../registro/aspirante.php">Registrarse</a>
+                <a class="nav-link float-center cursor-dedo" href="../registro/aspirante.php">Registrarse</a>
               </li>
             </ul>
           </div>

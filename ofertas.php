@@ -11,7 +11,7 @@
 <body>
 	<?php include 'navbar.php';?>
 
-	<div class="contenido" style="">
+	<div class="container-fluid" style="">
 		<div class="row">
 			<div class="col-md-4 nav_lateral">
 				<div class="fecha_publicacion">

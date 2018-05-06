@@ -3,7 +3,6 @@ session_start();
 include '../php/Funciones.php';
 
 $funciones = new Funciones();
-
 $empresa = $funciones->datosEmpresa($_GET['id']);
 ?>
 
@@ -15,22 +14,23 @@ $empresa = $funciones->datosEmpresa($_GET['id']);
 <?php
 $titulo = $empresa->getNombre();
 require "../head.php";?>
-
 <link rel='shortcut icon' href='<?php echo $empresa->getFavico_empresa() ?>'>
+
 <body>
-
 <?php require "../navbar.php";?>
-
+<link rel="stylesheet" type="text/css" href="/css/empresas.css">
 <section class="bg-info">
-    	<div class="container">
+
+    <div class="container">
     		<div class="card cabecera-info">
-             <img class="img-fluid img-cabecera" src="<?php echo $empresa->getLogo_empresa() ?>">
+             <img class="img-fluid img-cabecera" src="<?php echo $empresa->getLogo_empresa()?>">
              <div class="card-body text-center">
                 <h1 class="font-weight-bold"><?php echo $empresa->getNombre(); ?></h1>
                 <h6><?php echo $empresa->getSector().", ".$empresa->getDireccion(); ?></h6>
             </div>
         </div>
     </div>
+
 </section>
 
 <section class="container">
@@ -53,10 +53,6 @@ require "../head.php";?>
 </section>
 
 <section class="container">
-
-<<<<<<< HEAD
-
-=======
     <div class="row tab-content" id="myTabContent">
       <div class="container tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="tab-resumen">
         <div class="row">

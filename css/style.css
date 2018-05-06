@@ -64,7 +64,19 @@
 .link{
     transition: 0.2s ease;
     color: white;
-  }
+}
+
+
+.card-logo img{
+  height: 128px;
+  width: 128px;
+  object-fit: cover;
+}
+
+.card-logo{
+  height: 128px;
+  width: 128px;
+}
 
 .link:hover{
     border-bottom: 5px solid #ffffff;

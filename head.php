@@ -20,6 +20,7 @@
     <!-- Custom CSS -->
     <link href="/css/style.css" rel="stylesheet"/>
     <link href="/css/colores.css" rel="stylesheet"/>
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="http://placehold.jp/16x16.png?text=P">
     <link rel="apple-touch-icon" href="http://placehold.jp/57x57.png?text=P">
