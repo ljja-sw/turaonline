@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <?php
 $titulo = "Empresas";
-require "head.php" ?>
+require "head.php"; ?>
 <link rel="stylesheet" type="text/css" href="../css/empresas.css">
 <body>
 

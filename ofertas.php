@@ -1,10 +1,13 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <script type="text/javascript" src="js/ofertas.js"></script>
+
 <?php
 	$titulo = "Ofertas";
-	require "head.php" 
+	require "head.php"; 
 ?>
 <link rel="stylesheet" type="text/css" href="css/ofertas.css">
 
@@ -66,33 +69,9 @@
 						<h3>Contrato ocasional de trabajo</h3>
 					</div>
 				</div>
-
 			</div>
-			<div class="col-md-8 conten_ofertas">
-				<div class="contenido2">
-					<div class="publicaciones" style="background-color: #E5E7E9;">
-						<a class="nom-oferta" href="#">Nombre de oferta</a>
-						<div class="localizacion row">
-							<span class="col-md-4">
-								<a class="nom-empresa" href="">Nombre empresa</a>
-							</span>
-							<a class="evaluacion col-md-8" href="">Evaluacion</a>
-							<span class="ubicacion col-md-12">Buenaventura, Valle del Cauca</span>
-						</div>
-						<div class="contenido_descripcion">
-							<span class="descripcion">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ea ducimus atque quasi, nostrum maxime officia ullam sed, possimus inventore quod. Eveniet in, neque quod, fugit illo aspernatur perferendis laudantium?...
-							</span>
-						</div>
-						<div class="row tiempoP_boton">
-							<div class="tiempo_publicacion">
-								<span class="date">hace 10 horas</span>
-							</div>
-							<button>Aplicar</button>
-						</div>
-						
-					</div>
-				</div>
+			<div class="col-md-8 contenido">
+				<?php include 'ajax/lista_ofertas.php'; ?>
 			</div>
 		</div>
 	</div>
