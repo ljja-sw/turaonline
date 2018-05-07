@@ -31,8 +31,8 @@
     <input type="password" class="form-control" id="inputContrasenia" name="inputContrasenia">
   </div>
   <br>
-  <small id="emailHelp" class="form-text">¿Deseas registrar tu empresa? <a href="registro/empresa.php" class="cursor-dedo" data-dismiss="modal">Regístrate aquí</a></small>
-  
+  <small id="emailHelp" class="form-text">¿Deseas registrar una empresa? <a href="registro/empresa.php" class="cursor-dedo" data-dismiss="modal">Regístrate aquí</a></small>
+
     <br>
   <button type="submit" class="btn btn-login btn-lg">Iniciar Sesión</button>
 </form>
