@@ -6,6 +6,13 @@ a{
   color: #003459;
 }
 
+.bq-pagina .bg-title {
+  color: #003459; }
+
+.bq-pagina {
+  border-color: #003459; }
+
+
 .bg-pagina-lighteen{
   background-color: #004b80;
 }
@@ -84,10 +91,6 @@ a{
                     border-color: transparent;
                     background-color: #194869;
                   }
-
-
-                  .bq-pagina .bg-title {
-                    color: #003459; }
 
                     .page-item .page-link{
                       color: #003459;

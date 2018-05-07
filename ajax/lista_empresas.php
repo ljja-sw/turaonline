@@ -4,7 +4,7 @@ $C = new Conexion();
 
 $link = $C->conectar();
 
-$query = "SELECT * FROM Empresas";
+$query = "SELECT * FROM Empresas INNER JOIN sector_empresarial ON empresas.sector = sector_empresarial.id_sector";
 
 $resultado = mysqli_query($link,$query);
 
@@ -13,9 +13,6 @@ clearstatcache();
 if(mysqli_num_rows($resultado)>0){
 
 	while ($fila = mysqli_fetch_assoc($resultado)) {
-		$query_sector = "SELECT nombre_sector FROM sector_empresarial WHERE id_sector=".$fila["sector"].";";
-		$resultado_s = mysqli_query($link,$query_sector);
-		$sector_empresa = mysqli_fetch_assoc($resultado_s);
 		$img = $fila['nit']."/img/"."300_".$fila['nit'].".png";
 		?>
 
@@ -29,7 +26,7 @@ if(mysqli_num_rows($resultado)>0){
 				</div>
 				<div class="col-md-7 align-self-center">
 					<h5 class="mt-0 font-weight-bold"><?php echo $fila["nombre"]; ?></h5>
-					<p class="h6 text-muted"><?php echo $sector_empresa['nombre_sector']; ?></p>
+					<p class="h6 text-muted"><?php echo $fila['nombre_sector']; ?></p>
 					<p class="h6 text-muted"><?php echo $fila["direccion"];?></p>
 				</div>
 				<div class="col-md-2 align-self-end">

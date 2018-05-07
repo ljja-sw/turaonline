@@ -81,14 +81,14 @@ require "head.php" ?>
             <div class="col-md-2 align-self-center">
                 <div class="card">
                     <div class="card-body">
-                        <h3>777</h3>
+                        <h3>0</h3>
                         <p>Empresas registradas</p>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-body">
-                        <h3>1414</h3>
+                        <h3>0</h3>
                         <p>Publicaciones ralizadas</p>
                     </div>
                 </div>
