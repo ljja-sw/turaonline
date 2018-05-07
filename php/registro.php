@@ -56,12 +56,12 @@ function registro_empresas(){
 	$link = $C->conectar();
 	
 	$sector_input   = mysqli_real_escape_string($link,$_POST['sector']);
-	$query_sector = "SELECT id_sector FROM sector_empresarial where nombre_sector='".$sector_input."'";
+	$query_sector = "SELECT id FROM sector_empresarial where nombre='".$sector_input."'";
 	$resultado_sector = mysqli_query($link,$query_sector);
 
 	if (mysqli_num_rows($resultado_sector)>0) {
 		$array_sector = mysqli_fetch_assoc($resultado_sector);
-		$sector = $array_sector['id_sector'];
+		$sector = $array_sector['id'];
 	} else {
 		$query_sector = "INSERT INTO sector_empresarial VALUES (NULL,'".$sector_input."');";
 		$resultado_sector = mysqli_query($link,$query_sector);
@@ -76,7 +76,7 @@ function registro_empresas(){
 	$contrasena   	= password_hash( $_POST['contrasena'], PASSWORD_BCRYPT, array('cost' => 11));
 	$directorio_personal = "../store/empresas/".$nit;
 
-	$sql = "INSERT INTO empresas (`nombre`,`sector`,`correo`,`hash_contrasena`,`nit`,`direccion`,`telefono`,`estado`,`descripcion`) VALUES('".$nombre."',".$sector.",'".$correo."','".$contrasena."','".$nit."','".$direccion."','".$numero_tel."','En Espera','¿En que se especializa esta empresa?');";
+	$sql = "INSERT INTO empresas (`nombre`,`id_sector`,`correo`,`hash_contrasena`,`nit`,`direccion`,`telefono`,`estado`,`descripcion`) VALUES('".$nombre."',".$sector.",'".$correo."','".$contrasena."','".$nit."','".$direccion."','".$numero_tel."','En Espera','¿En que se especializa esta empresa?');";
 
 	$resultado = mysqli_query($link,$sql);
 

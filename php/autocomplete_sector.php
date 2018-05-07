@@ -7,7 +7,7 @@ $sector = "";
 $C = new Conexion();
 $link = $C->conectar();
 
-$consulta = "SELECT * FROM sector_empresarial WHERE nombre_sector LIKE '%$sector%' OR nombre_sector='%$sector%';";
+$consulta = "SELECT * FROM sector_empresarial WHERE nombre LIKE '%$sector%' OR nombre='%$sector%';";
  
 $resultado = mysqli_query($link,$consulta);
 

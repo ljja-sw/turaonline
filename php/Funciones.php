@@ -17,7 +17,7 @@ class Funciones
 
 	function datosEmpresa($nit_empresa){
 		$empresa = new Empresa();
-		$query = "SELECT * FROM empresas INNER JOIN sector_empresarial ON empresas.sector = sector_empresarial.id_sector WHERE nit='".$nit_empresa."';";
+		$query = "SELECT empresas.nombre, correo, hash_contrasena, nit, direccion, telefono, descripcion,sector_empresarial.nombre as nombre_sector FROM empresas INNER JOIN sector_empresarial ON empresas.id_sector = sector_empresarial.id WHERE nit='".$nit_empresa."';";
 		$resultado = $this->ejecutarQuery($query);
 
 		while ($fila = mysqli_fetch_assoc($resultado)) {
@@ -32,17 +32,5 @@ class Funciones
 			$empresa->setDescripcion($fila['descripcion']);
 		}
 		return $empresa;
-	}
-
-	function sectorList($sector = null){
-
-	}
-
-	function regitrarSector($nombre_sector){
-		if (!is_null($resultado)) {
-			echo "Sector Registrado";
-		}else{
-			echo "Hubo un error";
-		}
 	}
 }

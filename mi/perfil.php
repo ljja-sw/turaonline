@@ -32,9 +32,8 @@ if ( $_SESSION["loggedin"] != true ) {
             </div>
 
             <div class="col-md-7 col-sm-7 text-center">
-              <p class="display-responsive-4"><?php echo $_SESSION["nombres"]." ".$_SESSION["apellidos"] ?></p>
+              <p class="h1-responsive"><?php echo $_SESSION["nombres"]." ".$_SESSION["apellidos"] ?></p>
               <h5><b>Cédula:</b> <?php echo $_SESSION["cedula"]; ?></h5>
-              <h6><b>Edad:</b> <?php echo $_SESSION["edad"]; ?> años</h6>
             </div>
           </div>
         </div>
