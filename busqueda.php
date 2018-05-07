@@ -77,7 +77,7 @@ $funciones = new Funciones();
 												</div>
 											</div>
 											<div class="col-md-9">
-												<h3 class="mt-0 font-weight-bold">
+												<h3 class="mt-0 h3-responsive">
 													<?php echo $fila["nombre"]; ?>
 												</h3>
 												<p class="h6 text-muted">
@@ -109,14 +109,14 @@ $funciones = new Funciones();
 								</div>
 								<div class="row">
 									<?php
-									$query = "SELECT * FROM sector_empresarial WHERE nombre_sector LIKE '%$busqueda%';";
+									$query = "SELECT * FROM sector_empresarial WHERE nombre LIKE '%$busqueda%';";
 									$resultado = $funciones->
 									ejecutarQuery($query);
 									if (mysqli_num_rows($resultado) >= 1) {
 										while($fila = mysqli_fetch_assoc($resultado)) { ?>
 										<div class="card card-body col-md-4 mx-2">
 											<h4 class="card-title">
-												<?php echo $fila['nombre_sector']; ?>
+												<?php echo $fila['nombre']; ?>
 											</h4>
 											<div class="flex-row">
 												<a class="card-link float-right" href="#<?php echo $fila['id_sector'] ?>">
@@ -141,9 +141,8 @@ $funciones = new Funciones();
 									</div>
 									<div class="row">
 										<?php
-										$query = "SELECT 
-										ofertas.id,ofertas.titulo,ofertas.descripcion,ofertas.tipo,ofertas.fecha_publicacion,ofertas.fecha_vencimiento,empresas.nombre,empresas.nit
-										FROM ofertas INNER JOIN empresas ON empresas.id_empresa = ofertas.id_empresa WHERE titulo LIKE '%$busqueda%' OR ofertas.descripcion LIKE '%$busqueda%' OR empresas.nombre LIKE '%$busqueda%'; ";
+										$query = "SELECT titulo,tipo,fecha_publicacion,fecha_vencimiento,empresas.nombre,empresas.nit,ofertas.descripcion
+										FROM ofertas INNER JOIN empresas ON empresas.id = ofertas.id_empresa WHERE titulo LIKE '%$busqueda%' OR ofertas.descripcion LIKE '%$busqueda%' OR empresas.nombre LIKE '%$busqueda%'; ";
 										$resultado = $funciones->
 										ejecutarQuery($query);
 										if (mysqli_num_rows($resultado) >= 1) {

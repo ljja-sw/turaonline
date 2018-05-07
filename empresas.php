@@ -89,8 +89,11 @@ require "head.php"; ?>
 				<h6 class="card-header principal text-white">Sector</h6>
 				
 				<ul class="card-body clist-group list-group-flush list-sectores">
-				   <?php for ($i=0; $i < 10; $i++) { ?>
-				   <a href="#" class="list-group-item">Item <?php echo $i+1 ?></a>
+					<a href="empresas.php" class="list-group-item">Todas</a>
+					<?php 
+					$resultado = $funciones->ejecutarQuery("SELECT DISTINCT * FROM sector_empresarial");
+					while ($sectores = mysqli_fetch_assoc($resultado)) {?>
+						<a href="?s=<?php echo $sectores['id'] ?>" class="list-group-item"><?php echo $sectores['nombre'] ?></a>
 				   <?php } ?>
 			   </ul>
 		   </div>
@@ -104,17 +107,6 @@ require "head.php"; ?>
 		<!--Lista Empresas -->
 		<?php include 'ajax/lista_empresas.php'; ?>
 		<!--Fin Lista Empresas -->
-
-		<!--Paginacion -->
-		<nav aria-label="Page navigation">
-		  <ul class="pagination justify-content-center">
-			<li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-			<li class="page-item active"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
-		</ul>
-	</nav>
-	<!--Fin Paginacion -->
 
 </div>
 </div>
