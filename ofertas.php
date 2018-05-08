@@ -71,7 +71,9 @@
 				</div>
 			</div>
 			<div class="col-md-8 contenido">
-				<?php include 'ajax/lista_ofertas.php'; ?>
+				<div class="contenido2">
+					<?php include 'ajax/lista_ofertas.php'; ?>
+				</div>
 			</div>
 		</div>
 	</div>

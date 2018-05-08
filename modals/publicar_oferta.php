@@ -7,7 +7,7 @@
 					<span aria-hidden="true" class="white-text">&times;</span>
 				</button>
 			</div>
-			<form>
+			<form action="../php/registrar_ofertas.php" method="POST">
 				<div class="modal-body">
 					<div class="md-form d-flex align-items-center">
 						<i class="fa fa-font prefix"></i>
@@ -31,7 +31,7 @@
 						<span class="custom-control-description">Ofeta tipo <strong>Urgente</strong></span>
 					</label>
 					<a type="button" class="btn btn-outline-pagina">Vista Previa</a>
-					<button type="button" class="btn btn-pagina ">Publicar</button>
+					<button type="submit" class="btn btn-pagina ">Publicar</button>
 				</div>
 			</form>
 		</div>
