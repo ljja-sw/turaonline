@@ -1,25 +1,24 @@
-.logo{ width: 100px;}
-
-.cabecera{
-  padding-bottom: 30px;
-  padding-top: 30px;
+.logo {
+    width: 100px;
 }
-
-.carousel-item img{
-  height: 300px;
+.cabecera {
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
-
-.avatar{
-  padding-left: 3px;
-  padding-right: 3px;
-  width:70px;
-  height:60px;
-  border-radius:30px;
-  object-fit : cover;
+.carousel-item img {
+    height: 300px;
 }
-
-.hidden{  display: none; }
-
+.avatar {
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 70px;
+    height: 60px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+.hidden {
+    display: none;
+}
 .modal-backdrop {
     position: fixed;
     top: 0;
@@ -27,101 +26,115 @@
     bottom: 0;
     left: 0;
     z-index: 1000;
-    background-color: #000;}
-
-.blockquote .bq-nav {
-  font-weight: 300;
-  font-size: 1.1rem;
-  margin-bottom: 0; 
+    background-color: #000;
 }
-
-.input-group.md-form.form-sm.form-1 input{
+.blockquote .bq-nav {
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+.input-group.md-form.form-sm.form-1 input {
     border: 1px solid #bdbdbd;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
 }
-
-.overlay{
+.overlay {
     z-index: 0;
-    background-color : black;
+    background-color: black;
     position: absolute;
     height: 100%;
     width: 100%;
 }
-
-.card{
-  margin-bottom: 15px;
-  transition: .2s;
-  box-shadow: 0 2px 4px 0 rgba(0,  52,  89, 0.2), 0 3px 10px 0 rgba(0,  52,  89, 0.19);
-
+.card {
+    margin-bottom: 15px;
+    transition: .2s;
+    box-shadow: 0 2px 4px 0 rgba(0, 52, 89, 0.2), 0 3px 10px 0 rgba(0, 52, 89, 0.19);
 }
-
-.card:hover{
-  transition: .2s;
-    box-shadow: 0 8px 16px 0 rgba(0,  52,  89, 0.2), 0 12px 40px 0 rgba(0,  52,  89, 0.19);
+.card:hover {
+    transition: .2s;
+    box-shadow: 0 8px 16px 0 rgba(0, 52, 89, 0.2), 0 12px 40px 0 rgba(0, 52, 89, 0.19);
 }
-
-.link{
+.link {
     transition: 0.2s ease;
     color: white;
 }
-
-
-.card-logo img{
-  height: 128px;
-  width: 128px;
-  object-fit: cover;
+.card-logo img {
+    height: 128px;
+    width: 128px;
+    object-fit: cover;
 }
-
-.card-logo{
-  height: 128px;
-  width: 128px;
+.card-logo {
+    height: 128px;
+    width: 128px;
 }
-
-.link:hover{
+.link:hover {
     border-bottom: 5px solid #ffffff;
     padding-top: 6px;
     text-decoration: none;
     color: white;
 }
-
-.resultados div{
-  margin-left: 30px;
+.resultados div {
+    margin-left: 30px;
 }
-
 .display-responsive-4 {
-  font-size: 1.5rem;
-  padding: 10px;
-  font-weight: 300;
-  line-height: 1.2;
+    font-size: 1.5rem;
+    padding: 10px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+@media (min-width: 576px) {
+    .display-responsive-4 {
+        font-size: 5.5vw;
+    }
+}
+@media (min-width: 768px) {
+    .display-responsive-4 {
+        font-size: 4.5vw;
+    }
+}
+@media (min-width: 992px) {
+    .display-responsive-4 {
+        font-size: 3.5vw;
+    }
+}
+@media (min-width: 1200px) {
+    .display-responsive-4 {
+        font-size: 2.5vw;
+    }
 }
 
-
-@media (min-width: 576px) 
-{ 
-.display-responsive-4 {
-  font-size: 5.5vw;
 }
-}
-
-@media (min-width: 768px) 
-{ 
-.display-responsive-4 {
-  font-size: 4.5vw;
-
-}
-}
-
-@media (min-width: 992px) 
+.panel > .list-group
 {
-.display-responsive-4 {
-  font-size: 3.5vw;
+    margin-bottom: 0;
 }
+.panel > .list-group .list-group-item
+{
+    border-width: 1px 0;
+}
+.panel > .list-group .list-group-item:first-child
+{
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.panel > .list-group .list-group-item:last-child
+{
+    border-bottom: 0;
+}
+.panel-heading + .list-group .list-group-item:first-child
+{
+    border-top-width: 0;
+}
+.panel-default .list-group-item.active
+{
+    color: #000;
+    background-color: #003459;
+    border-color: #003459;
 }
 
-@media (min-width: 1200px) 
-{ 
-.display-responsive-4 {
-  font-size: 2.5vw;
-}
+.panel a.list-group-item.active:hover, a.list-group-item.active:focus
+{
+    color: #000;
+    background-color: #003459;
+    border-color: #003459;
 }

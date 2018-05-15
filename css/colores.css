@@ -25,8 +25,12 @@ a{
   background-color: #002945;
 }
 
+.rgba-black-pagina {
+  background-color: rgba(0, 52, 89, 0.3) !important; }
+
 .card-header{
   background-color: #003459;
+  color: white;
 }
 
 .nav-pills .nav-link.active,
