@@ -30,7 +30,7 @@
 					<small>hace 1 hora(s)</small>
 				</div>
 				<div class="col">
-					<a href="#" class="btn btn-outline-pagina">Ver Oferta</a>
+					<a href="#" class="float-right btn btn-outline-pagina">Ver Oferta</a>
 				</div>
 			</div>
 		</div>
