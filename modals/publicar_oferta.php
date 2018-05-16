@@ -1,39 +1,40 @@
+
 <div class="modal fade" id="publicarOferta" tabindex="-1" role="dialog" aria-labelledby="publicarOferta" aria-hidden="true">
 	<div class="modal-dialog " role="domcument">
 		<div class="modal-content">
 			<div class="modal-header bg-pagina">
-				<h3 class="modal-title white-text"><strong>Publicar Oferta</strong></h3>
+				<h3 class="modal-title white-text"><strong>Oferta Publicada</strong></h3>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true" class="white-text">&times;</span>
 				</button>
 			</div>
-			<form action="../php/registrar_ofertas.php" method="POST">
-				<div class="modal-body">
-					<div class="md-form d-flex align-items-center">
-						<i class="fa fa-font prefix"></i>
-						<input type="text" class="form-control mb-2" id="inlineFormInputMD">
-						<label for="textareaPrefix">Titulo</label>
-					</div>
-					<div class="md-form d-flex align-items-center">
-						<i class="fa fa-align-justify prefix"></i>
-						<textarea type="text" id="textareaPrefix" class="md-textarea md-textarea-auto form-control" rows="3"></textarea>
-						<label for="textareaPrefix">Descripcion</label>
-					</div>
-					<div class="md-form d-flex align-items-center">
-						<i class="fa fa-calendar-alt prefix"></i>
-						<input type="text" class="form-control mb-2" id="fecha_vencimiento" placeholder="Fecha de Vencimiento">
-					</div>	
+			<div class="col-md-11 container mx-1">
+			<div class="row align-items-center">
+				<div class="col-md-8 py-3">
+					<h5>
+						<strong>
+							Punto de Venta
+						</strong>
+					</h5>por
+					<a href="#">Juiner Company</a>
 				</div>
-				<div class="modal-footer">
-					<label class="custom-control custom-checkbox mr-3">
-						<input type="checkbox" class="custom-control-input">
-						<span class="custom-control-indicator"></span>
-						<span class="custom-control-description">Ofeta tipo <strong>Urgente</strong></span>
-					</label>
-					<a type="button" class="btn btn-outline-pagina">Vista Previa</a>
-					<button type="submit" class="btn btn-pagina ">Publicar</button>
+				<div class="col">
+					<h6>Evaluacion</h6>
 				</div>
-			</form>
+			</div>
+			<div class="row mx-1">
+				<p class="descrip" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos obcaecati magni aut quidem, fugit quibusdam distinctio voluptatibus nesciunt consectetur quis eos reiciendis ducimus facilis repudiandae ea rem ipsam earum commodi.</p>
+			</div>
+			<div class="row mx-1 align-items-center">
+				<div class="col-md-8">
+					<small>hace 1 hora(s)</small>
+				</div>
+				<div class="col">
+					<a href="#" class="btn btn-outline-pagina">Ver Oferta</a>
+				</div>
+			</div>
+		</div>
+			
 		</div>
 	</div>
 </div>

@@ -25,7 +25,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
           <a class="nav-link" data-toggle="modal" data-target="#buscar"><i class="fa fa-search"></i> Buscar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#publicarOferta"><i class="fa fa-indent"></i>
+          <a class="nav-link" href="../mi/empresa.php#cuadrito"><i class="fa fa-indent"></i>
 Publicar Oferta</a>
         </li>
         <li class="nav-item">

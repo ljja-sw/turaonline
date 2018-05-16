@@ -83,6 +83,64 @@ if ( $_SESSION["loggedin"] != true ) {
                 </div><!-- Card -->
               </div><!-- Col -->
 
+              <div class="col-md-6" id="cuadrito"> <!-- Col -->
+                <div class="card"><!--Card -->
+                  <div class="card-header">
+                    <h4><strong>Publica tu oferta</strong></h4>
+                  </div>
+                  <div class="card-body">
+                    <input id="nom_oferta" type="text" class="form-control" name="nom_oferta" placeholder="Nombre de Oferta">
+                    <div class="form-group">
+                      <label for="comment">Descripción:</label>
+                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                    <input id="estudios" type="text" class="form-control" name="estudios" placeholder="Estudios requeridos">
+                    <input id="experiencia" type="text" class="form-control" name="experiencia" placeholder="Experiencia requerida">
+                    <input id="salario" type="text" class="form-control" name="salario" placeholder="Salario">
+                    <div class="form-group">
+                      <div class="col-xs-5 selectContainer">
+                          <select class="form-control" name="size">
+                              <option value="">--Tipo de contrato--</option>
+                              <option value="tcol">Contrato de Obra o labor</option>
+                              <option value="tcti">Contrato a término indefinido</option>
+                              <option value="tctf">Contrato a término fijo</option>
+                              <option value="tccps">Contrato civil por prestación de servicios</option>
+                              <option value="tca">Contrato de aprendizaje</option>
+                              <option value="tcot">Contrato ocasional de trabajo</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-xs-5 selectContainer">
+                          <select class="form-control" name="size">
+                              <option value="">--Tipo de jornada laboral--</option>
+                              <option value="tc">Tiempo Completo</option>
+                              <option value="tp">Tiempo Parcial</option>
+                              <option value="ph">Por Horas</option>
+                              <option value="bp">Beca/prácticas</option>
+                          </select>
+                      </div>   
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <button  class="float-right btn btn-default" type="button">Publicar oferta</button>
+                  </div>
+                </div><!-- Card -->
+              </div><!-- Col -->
+              
+              <div class="col-md-6"> <!-- Col -->
+                <div class="card"><!--Card -->
+                  <div class="card-header">
+                    <h4><strong>Ofertas Publicadas</strong></h4>
+                  </div>
+                  <div class="card-body">
+                    <?php include '../ajax/ofertas_publicadas.php' ?>
+                  </div>
+                  
+                </div><!-- Card -->
+              </div><!-- Col -->
+
+
             </div></section>
 
 

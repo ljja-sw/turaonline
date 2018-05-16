@@ -1,6 +1,6 @@
 <?php 
-include 'conexion_db.php';
-include 'obj/empresa.php';
+include_once 'conexion_db.php';
+include_once 'obj/empresa.php';
 /**
 * 
 */

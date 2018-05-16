@@ -1,4 +1,5 @@
 <?php
+
 	class Conexion{
 		function conectar(){
 			$conexion = mysqli_connect("localhost:3307", "root", "", "turaonline");
@@ -7,6 +8,7 @@
 			if (!$conexion) {
 				echo 'Error al conectar a la base de datos';}
 				else{
+					
 				}
 				mysqli_set_charset($conexion, "utf8");
 				return $conexion;

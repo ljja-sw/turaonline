@@ -2,7 +2,7 @@
   include 'php/Funciones.php';
   $f = new Funciones();
 
-$query = "SELECT titulo,tipo,fecha_publicacion,fecha_vencimiento,empresas.nombre,empresas.nit,ofertas.descripcion FROM ofertas INNER JOIN empresas ON ofertas.id_empresa = empresas.id";
+$query = "SELECT titulo,tipo,fecha_publicacion,estado_oferta,empresas.nombre,empresas.nit,ofertas.descripcion FROM ofertas INNER JOIN empresas ON ofertas.id_empresa = empresas.id";
 
 $resultado = $f->ejecutarQuery($query);
 clearstatcache();
