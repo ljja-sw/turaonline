@@ -1,24 +1,19 @@
 <?php 
-@include_once  '../php/conexion_db.php';
 
 $C = new Conexion();
 
 $link = $C->conectar();
 
-$select_from = "SELECT empresas.nombre, correo, hash_contrasena, nit, direccion, telefono, descripcion,sector_empresarial.nombre as nombre_sector FROM empresas INNER JOIN sector_empresarial ON empresas.id_sector = sector_empresarial.id";
-$where = "";
-
-if (isset($_POST['sector']) && $_POST['sector'] != '') {
-    $where .= " WHERE sector_empresarial.id ='".$_POST['sector']."'";
-}
-
-$orden= " ORDER BY nombre LIMIT 5";
-
-
-
-$resultado = mysqli_query($link,$select_from.$where.$orden);
+$query = "SELECT empresas.nombre, correo, hash_contrasena, nit, direccion, telefono, descripcion,sector_empresarial.nombre as nombre_sector FROM empresas INNER JOIN sector_empresarial ON empresas.id_sector = sector_empresarial.id";
 
 $numero_empresas = mysqli_query($link,"SELECT COUNT(id) FROM empresas");
+
+if (isset($_GET['s'])) {
+	$query = $query." WHERE sector_empresarial.id ='".$_GET['s']."';";
+}
+
+$resultado = mysqli_query($link,$query);
+
 clearstatcache();
 
 if(mysqli_num_rows($resultado)>0){
@@ -26,7 +21,8 @@ if(mysqli_num_rows($resultado)>0){
 	while ($fila = mysqli_fetch_assoc($resultado)) {
 		$img = $fila['nit']."/img/"."300_".$fila['nit'].".png";
 		?>
-<div class="card card-empresa animated fadeIn">
+
+<div class="card card-empresa">
     <div class="card-body row">
         <div class="col-md-3 my-3">
             <div class="card-logo text-center">

@@ -3,7 +3,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
 
   if(isset($_SESSION["nit"])){ ?>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-pagina" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-pagina">
     <div class="container-fluid">
       <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
       </a>
@@ -43,7 +43,7 @@ Publicar Oferta</a>
 
     <?php }else if(isset($_SESSION["cedula"])){ ?>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-pagina" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-pagina">
       <div class="container-fluid">
         <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
         </a>
@@ -78,7 +78,7 @@ Publicar Oferta</a>
 
         <?php }}else { ?>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-pagina" id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-pagina">
           <div class="container-fluid">
             <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
             </a>
