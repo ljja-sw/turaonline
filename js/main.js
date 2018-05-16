@@ -9,6 +9,7 @@ $('#filtro_sectores a').on('click', function(e){
       data: {sector:sector},
         success: function(response){
           $("#empresas").html(response)
+          this.addClass('active')
         }
   });
 });

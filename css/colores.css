@@ -12,13 +12,12 @@ a{
 .bq-pagina {
   border-color: #003459; }
 
-
 .bg-pagina-lighteen{
   background-color: #004b80;
 }
 
 .bg-pagina{
-  background-color: #003459;
+  background-color: #003459 !important;
 }
 
 .bg-pagina-darkeen{

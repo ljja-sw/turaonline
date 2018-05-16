@@ -35,7 +35,6 @@ $f = new Funciones(); ?>
                                 <img alt="Buenaventura" class="d-block w-100 img-fluid" src="img/overlay.jpg">
                                 <div class="mask rgba-black-strong">
                                 </div>
-                            </img>
                         </div>
                         <div class="carousel-caption">
                             <h3 class="h3-responsive">
@@ -52,7 +51,6 @@ $f = new Funciones(); ?>
                             <img alt="Soporte" class="d-block w-100 img-fluid" src="img/slider/s1.jpg">
                             <div class="mask rgba-black-strong">
                             </div>
-                        </img>
                     </div>
                     <div class="carousel-caption">
                         <h3 class="h3-responsive">
@@ -69,7 +67,6 @@ $f = new Funciones(); ?>
                         <img alt="Trabajos" class="d-block w-100 img-fluid" src="img/slider/s2.jpg">
                         <div class="mask rgba-black-strong">
                         </div>
-                    </img>
                 </div>
                 <div class="carousel-caption">
                     <h3 class="h3-responsive">
@@ -131,6 +128,11 @@ $f = new Funciones(); ?>
 </div>
 </div>
 </section>
+
+<section class="container">
+
+</section>
+
 <section class="container-fluid my-3">
     <div class="row">
         <h2 class="h2-responsive mx-4">
@@ -139,96 +141,96 @@ $f = new Funciones(); ?>
     </div>
     <div class="row">
         <div class="d-flex offset-md-1 col-md-5 d-flex align-items-center">
-           <h3 class="card card-header h3-responsive">
-           <i class="fa fa-clock fa-2x m-2 text-center"></i>
-           Empresa registrada Recientemente</h3>
-        </div>
+         <h3 class="card card-header h3-responsive">
+             <i class="fa fa-clock fa-2x m-2 text-center"></i>
+         Empresa registrada Recientemente</h3>
+     </div>
 
-        <div class="col-md-6">
-            <?php $query = "SELECT empresas.nombre, correo, hash_contrasena, nit, direccion, telefono, descripcion,sector_empresarial.nombre as nombre_sector FROM empresas INNER JOIN sector_empresarial ON empresas.id_sector = sector_empresarial.id ORDER BY fecha_registro LIMIT 1";
-                  $resultado = $f->ejecutarQuery($query); ?>
+     <div class="col-md-6">
+        <?php $query = "SELECT empresas.nombre, correo, hash_contrasena, nit, direccion, telefono, descripcion,sector_empresarial.nombre as nombre_sector FROM empresas INNER JOIN sector_empresarial ON empresas.id_sector = sector_empresarial.id ORDER BY fecha_registro LIMIT 1";
+        $resultado = $f->ejecutarQuery($query); ?>
 
-                    <?php while ($fila = mysqli_fetch_assoc($resultado)) { 
-                        $img = $fila['nit']."/img/"."300_".$fila['nit'].".png"; 
-                        ?>
-                            <div class="card card-empresa">
-                                <div class="card-body row">
-                                    <div class="col-md-3 my-3">
-                                        <div class="card-logo text-center">
-                                            <img src="store/empresas/<?php echo $img ?>">
-                                    </div>
-                                </div>
-                                <div class="col-md-7 align-self-center">
-                                    <p class="h5-responsive">
-                                        <?php echo $fila["nombre"]; ?>
-                                    </p>
-                                    <p class="h6-responsive text-muted">
-                                        <?php echo $fila['nombre_sector']; ?>
-                                    </p>
-                                    <p class="h6-responsive text-muted">
-                                        <?php echo $fila["direccion"];?>
-                                    </p>
-                                </div>
-                                <div class="col-md-2 align-self-end">
-                                    <a class="float-right" href="empresas/info.php?id=<?php echo $fila['nit'] ?>">
-                                        Info
-                                        <i class="fa fa-arrow-right">
-                                        </i>
-                                    </a>
-                                </div>
-                            </div>
+        <?php while ($fila = mysqli_fetch_assoc($resultado)) { 
+            $img = $fila['nit']."/img/"."300_".$fila['nit'].".png"; 
+            ?>
+            <div class="card card-empresa">
+                <div class="card-body row">
+                    <div class="col-md-3 my-3">
+                        <div class="card-logo text-center">
+                            <img src="store/empresas/<?php echo $img ?>">
                         </div>
-               <?php } ?>
-        </div>
+                    </div>
+                    <div class="col-md-7 align-self-center">
+                        <p class="h5-responsive">
+                            <?php echo $fila["nombre"]; ?>
+                        </p>
+                        <p class="h6-responsive text-muted">
+                            <?php echo $fila['nombre_sector']; ?>
+                        </p>
+                        <p class="h6-responsive text-muted">
+                            <?php echo $fila["direccion"];?>
+                        </p>
+                    </div>
+                    <div class="col-md-2 align-self-end">
+                        <a class="float-right" href="empresas/info.php?id=<?php echo $fila['nit'] ?>">
+                            Info
+                            <i class="fa fa-arrow-right">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <?php $query = "SELECT empresas.nombre, correo, nit, direccion, puntajes.puntaje,descripcion,sector_empresarial.nombre as nombre_sector FROM empresas INNER JOIN sector_empresarial  ON empresas.id_sector = sector_empresarial.id INNER JOIN puntajes on puntajes.id_empresa = empresas.id ORDER BY fecha_registro LIMIT 1";
+        $resultado = $f->ejecutarQuery($query); ?>
+
+        <?php while ($fila = mysqli_fetch_assoc($resultado)) { 
+            $img = $fila['nit']."/img/"."300_".$fila['nit'].".png"; 
+            ?>
+            <div class="card card-empresa">
+                <span></span>
+                <div class="card-body row">
+                    <div class="col-md-3 my-3">
+                        <div class="card-logo text-center">
+                            <img src="store/empresas/<?php echo $img ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-7 align-self-center">
+                        <p class="h5-responsive">
+                            <?php echo $fila["nombre"]; ?>
+                            <span class="badge badge-pill bg-pagina"><?php echo $fila['puntaje']; ?></span>
+                        </p>
+                        <p class="h6-responsive text-muted">
+                            <?php echo $fila['nombre_sector']; ?>
+                        </p>
+                        <p class="h6-responsive text-muted">
+                            <?php echo $fila["direccion"];?>
+                        </p>
+                    </div>
+                    <div class="col-md-2 align-self-end">
+                        <a class="float-right" href="empresas/info.php?id=<?php echo $fila['nit'] ?>">
+                            Info
+                            <i class="fa fa-arrow-right">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
     </div>
 
-    <div class="row">
+    <div class="d-flex offset-md-1 col-md-5 d-flex align-items-center">
+        <h3 class="card card-header h3-responsive">
+         <i class="fa fa-star fa-2x m-2 text-center"></i>
+     La mejor puntuada</h3>
+ </div>
 
-
-        <div class="col-md-6">
-            <?php $query = "SELECT empresas.nombre, correo, hash_contrasena, nit, direccion, telefono, descripcion,sector_empresarial.nombre as nombre_sector FROM empresas INNER JOIN sector_empresarial ON empresas.id_sector = sector_empresarial.id ORDER BY fecha_registro LIMIT 1";
-                  $resultado = $f->ejecutarQuery($query); ?>
-
-                    <?php while ($fila = mysqli_fetch_assoc($resultado)) { 
-                        $img = $fila['nit']."/img/"."300_".$fila['nit'].".png"; 
-                        ?>
-                            <div class="card card-empresa">
-                                <div class="card-body row">
-                                    <div class="col-md-3 my-3">
-                                        <div class="card-logo text-center">
-                                            <img src="store/empresas/<?php echo $img ?>">
-                                    </div>
-                                </div>
-                                <div class="col-md-7 align-self-center">
-                                    <p class="h5-responsive">
-                                        <?php echo $fila["nombre"]; ?>
-                                    </p>
-                                    <p class="h6-responsive text-muted">
-                                        <?php echo $fila['nombre_sector']; ?>
-                                    </p>
-                                    <p class="h6-responsive text-muted">
-                                        <?php echo $fila["direccion"];?>
-                                    </p>
-                                </div>
-                                <div class="col-md-2 align-self-end">
-                                    <a class="float-right" href="empresas/info.php?id=<?php echo $fila['nit'] ?>">
-                                        Info
-                                        <i class="fa fa-arrow-right">
-                                        </i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-               <?php } ?>
-        </div>
-
-        <div class="d-flex offset-md-1 col-md-5 d-flex align-items-center">
-            <h3 class="card card-header h3-responsive">
-           <i class="fa fa-star fa-2x m-2 text-center"></i>
-            La mejor puntuada</h3>
-        </div>
-
-    </div>
+</div>
 </section>
 <?php require 'footer.php'; ?>
 </body>
