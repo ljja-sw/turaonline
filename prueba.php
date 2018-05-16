@@ -1,8 +1,2 @@
-<?php 
-	
-require 'ajax/lista_ofertas.php';
-
-
- ?>
-
+<input class="btn btn-primary" type="number" value="">
 

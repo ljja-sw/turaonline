@@ -14,14 +14,14 @@
 <body>
 	<?php include 'navbar.php';?>
 
-	<div class="container-fluid" style="">
+	<div class="container my-3">
 		<div class="row">
-			<div class="col-12 col-md-4 nav_lateral">
-				<div class="fecha_publicacion card">
-					<div class="titulo_div">
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header">
 						<h2>Fecha de publicacion</h2>
 					</div>
-					<div class="cont" >
+					<div class="card-body" >
 						<div class="row">
 							<label class="col-9 col-md-10" for="hoy">Hoy</label><input class="col-3 col-md-2 inputChe" id="hoy" type="checkbox">
 						</div>
@@ -39,11 +39,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="Salario card">
-					<div class="titulo_div">
+				<div class="card">
+					<div class="card-header">
 						<h2>Salario</h2>
 					</div>
-					<div class="cont">
+					<div class="card-body">
 						<div class="row">
 							<label class="col-9 col-md-10" for="Salario1">Menos de $ 700.000</label><input class="col-3 col-md-2 input" id="Salario1" type="checkbox">
 						</div>
@@ -67,11 +67,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="tipo_contrato card">
-					<div class="titulo_div">
+				<div class="card">
+					<div class="card-header">
 						<h2>Tipo de contrato</h2>
 					</div>
-					<div class="cont">
+					<div class="card-body">
 						<div class="row">
 							<label class="col-9 col-md-10" for="TP1">Contrato de Obra o labor</label><input class="col-3 col-md-2 input" id="TP1" type="checkbox">
 						</div>
@@ -92,11 +92,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="tipo_jornada card">
-					<div class="titulo_div">
+				<div class="card">
+					<div class="card-header">
 						<h2>Tipo de jornada</h2>
 					</div>
-					<div class="cont">
+					<div class="card-body">
 						<div class="row">
 							<label class="col-9 col-md-10" for="TJ1">Tiempo Completo</label><input class="col-3 col-md-2 input" id="TJ1" type="checkbox">
 						</div>
@@ -112,10 +112,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-8 contenido" style="padding-bottom: 50px;">
-				<div class="contenido2">
+
+			<div class="col-md-8">
 					<?php include 'ajax/lista_ofertas.php'; ?>
-				</div>
 			</div>
 		</div>
 	</div>

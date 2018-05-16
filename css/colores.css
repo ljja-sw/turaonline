@@ -12,21 +12,24 @@ a{
 .bq-pagina {
   border-color: #003459; }
 
-
 .bg-pagina-lighteen{
   background-color: #004b80;
 }
 
 .bg-pagina{
-  background-color: #003459;
+  background-color: #003459 !important;
 }
 
 .bg-pagina-darkeen{
   background-color: #002945;
 }
 
+.rgba-black-pagina {
+  background-color: rgba(0, 52, 89, 0.3) !important; }
+
 .card-header{
   background-color: #003459;
+  color: white;
 }
 
 .nav-pills .nav-link.active,

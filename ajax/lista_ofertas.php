@@ -39,7 +39,7 @@ if (mysqli_num_rows($resultado)>0) {
 <?php }
 }else{?>
 	<div class="text-center my-5">
-		<h1><i class="fi-x"></i></h1>
+		<h1><i class="fa fa-repeat" aria-hidden="true"></i></h1>
 		<h1 class="display-4">No hay Ofertas para Mostrar</h1>
 		<strong><p>No te preocupes muy pronto estarán disponibles</p></strong>
 	</div>

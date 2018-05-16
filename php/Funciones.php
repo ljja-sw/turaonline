@@ -1,6 +1,11 @@
 <?php 
+<<<<<<< HEAD
 include_once 'conexion_db.php';
 include_once 'obj/empresa.php';
+=======
+include_once  'conexion_db.php';
+include_once  'obj/empresa.php';
+>>>>>>> ca636709c324033131b384ed145b5acae0d3f752
 /**
 * 
 */
@@ -13,6 +18,12 @@ class Funciones
 		$link = $BD->conectar();
 		$resultado = mysqli_query($link,$query);
 		return $resultado;
+	}
+
+	function contar($tabla){
+		$resultado = $this->ejecutarQuery("SELECT COUNT(*) as ".$tabla." FROM ".$tabla);
+        $empresas = mysqli_fetch_assoc($resultado);
+        echo $empresas[$tabla];
 	}
 
 	function datosEmpresa($nit_empresa){
