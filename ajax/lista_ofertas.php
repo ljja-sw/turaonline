@@ -31,8 +31,10 @@ if (mysqli_num_rows($resultado)>0) {
 					<small>hace 1 hora(s)</small>
 				</div>
 				<div class="col">
-					<a href="#" class="btn btn-outline-pagina">Ver Oferta</a>
+					<a class="btn btn-outline-pagina" data-toggle="modal" data-target="#mostrar_o">Ver Oferta</a>
 				</div>
+				<!-- Modal -->
+				
 			</div>
 		</div>
 

@@ -4,7 +4,9 @@
 		$BD = new Conexion();
 		$link = $BD->conectar();
 
+
 $query = "SELECT titulo FROM ofertas INNER JOIN empresas ON ofertas.id_empresa =".$_SESSION['id_empresa'].";";
+
 $resultado = mysqli_query($link, $query);
 clearstatcache();
 if (mysqli_num_rows($resultado)>0) {

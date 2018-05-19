@@ -88,18 +88,20 @@ if ( $_SESSION["loggedin"] != true ) {
                   <div class="card-header">
                     <h4><strong>Publica tu oferta</strong></h4>
                   </div>
+
+                  <form action="../php/registrar_ofertas.php?r=oferta" method="post">
                   <div class="card-body">
-                    <input id="nom_oferta" type="text" class="form-control" name="nom_oferta" placeholder="Nombre de Oferta">
+                    <input id="nom_oferta" type="text" class="form-control" name="nom_oferta" placeholder="Nombre de Oferta" required>
                     <div class="form-group">
                       <label for="comment">Descripción:</label>
-                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                      <textarea class="form-control" rows="5" name="descripcion" id="descripcion" required></textarea>
                     </div>
-                    <input id="estudios" type="text" class="form-control" name="estudios" placeholder="Estudios requeridos">
-                    <input id="experiencia" type="text" class="form-control" name="experiencia" placeholder="Experiencia requerida">
-                    <input id="salario" type="text" class="form-control" name="salario" placeholder="Salario">
+                    <input id="estudios" type="text" class="form-control" name="estudios" placeholder="Estudios requeridos" required>
+                    <input id="experiencia" type="text" class="form-control" name="experiencia" placeholder="Años de experiencia" required>
+                    <input id="salario" type="text" class="form-control" name="salario" placeholder="Salario" required>
                     <div class="form-group">
                       <div class="col-xs-5 selectContainer">
-                          <select class="form-control" name="size">
+                          <select class="form-control" name="tcontrato" id="tcontrato" required>
                               <option value="">--Tipo de contrato--</option>
                               <option value="tcol">Contrato de Obra o labor</option>
                               <option value="tcti">Contrato a término indefinido</option>
@@ -112,7 +114,7 @@ if ( $_SESSION["loggedin"] != true ) {
                     </div>
                     <div class="form-group">
                       <div class="col-xs-5 selectContainer">
-                          <select class="form-control" name="size">
+                          <select class="form-control" name="tjornada" id="tjornada" required>
                               <option value="">--Tipo de jornada laboral--</option>
                               <option value="tc">Tiempo Completo</option>
                               <option value="tp">Tiempo Parcial</option>
@@ -121,10 +123,20 @@ if ( $_SESSION["loggedin"] != true ) {
                           </select>
                       </div>   
                     </div>
+                    <div class="form-group">
+                      <div class="col-xs-5 selectContainer">
+                          <select class="form-control" name="decaracter" required>
+                              <option value="">--De Caracter--</option>
+                              <option value="tc">Normal</option>
+                              <option value="tp">Urgente</option>
+                          </select>
+                      </div>   
+                    </div>
                   </div>
-                  <div class="card-footer">
-                    <button  class="float-right btn btn-default" type="button">Publicar oferta</button>
-                  </div>
+                    <div class="card-footer">
+                      <button  class="float-right btn btn-default" type="submit">Publicar oferta</button>
+                    </div>
+                  </form>
                 </div><!-- Card -->
               </div><!-- Col -->
               
