@@ -29,5 +29,4 @@
   </head>
 
 <?php include 'modals/buscar.php'; 
-      include 'modals/publicar_oferta.php';
 ?>
