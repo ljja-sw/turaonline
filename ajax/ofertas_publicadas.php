@@ -4,7 +4,7 @@
 		$BD = new Conexion();
 		$link = $BD->conectar();
 
-$query = "SELECT titulo,tipo,fecha_publicacion,estado_oferta,empresas.nombre,empresas.nit,ofertas.descripcion FROM ofertas INNER JOIN empresas ON ofertas.id_empresa = empresas.id;";
+$query = "SELECT titulo,empresas.nombre,empresas.nit,ofertas.descripcion FROM ofertas INNER JOIN empresas ON ofertas.id_empresa = empresas.id;";
 
 $resultado = mysqli_query($link, $query);
 clearstatcache();

@@ -26,7 +26,7 @@ function login_aspirantes(){
 			$_SESSION["hash_contrasenia"]=$row["hash_contrasenia"];
 			$_SESSION["edad"]=$row["edad"];
 			$_SESSION["cedula"]=$row["cedula"];
-			$_SESSION["id_usuario"]=$row["id"];
+			$_SESSION["id_usuario"]=$row["id_usuario"];
 			$_SESSION["perfil_laboral"] = utf8_encode($row["perfil_laboral"]);}
 
 			if(password_verify($_POST["inputContrasenia"],$_SESSION["hash_contrasenia"])){
@@ -83,9 +83,10 @@ function login_aspirantes(){
 					$_SESSION["direccion"]=$row["direccion"];
 					$_SESSION["hash_contrasenia"]=$row["hash_contrasena"];
 					$_SESSION["estado"]=$row["estado"];
-					$_SESSION["id_empresa"]=$row["id"];
-					$_SESSION["descripcion"]=  $row["descripcion"];}
+					$_SESSION["id_empresa"]=$row['id'];
+					$_SESSION["descripcion"]=  $row["descripcion"];
 				}
+			}
 
 				if(password_verify($_POST["inputContrasenia"],$_SESSION["hash_contrasenia"])){
 

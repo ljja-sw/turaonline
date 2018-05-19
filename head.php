@@ -30,4 +30,6 @@
 
 <?php include 'modals/buscar.php'; 
       include 'modals/publicar_oferta.php';
+      include 'modals/publicar_hv.php';
+      include 'modals/mostrar_oferta.php';
 ?>

@@ -59,6 +59,9 @@ Publicar Oferta</a>
           <li class="nav-item">
             <a class="nav-link cursor-dedo" href="../ofertas.php"><i class="fa fa-tasks prefix"></i> Ofertas de Trabajo</a>
           </li>
+          <li class="nav-item">
+           <a class="nav-link cursor-dedo" data-toggle="modal" data-target="#myModal"><i class="fa fa-align-left prefix"></i>Publicar HV</a>
+          </li>
         </ul>
         <ul class="navbar-nav ml-auto align-items-center">
           <li class="nav-item">

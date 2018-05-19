@@ -2,7 +2,7 @@
   include 'php/Funciones.php';
   $f = new Funciones();
 
-$query = "SELECT titulo,tipo,fecha_publicacion,estado_oferta,empresas.nombre,empresas.nit,ofertas.descripcion FROM ofertas INNER JOIN empresas ON ofertas.id_empresa = empresas.id";
+$query = "SELECT *,empresas.nombre,empresas.nit,ofertas.descripcion FROM ofertas INNER JOIN empresas ON ofertas.id_empresa = empresas.id";
 
 $resultado = $f->ejecutarQuery($query);
 clearstatcache();
@@ -31,8 +31,10 @@ if (mysqli_num_rows($resultado)>0) {
 					<small>hace 1 hora(s)</small>
 				</div>
 				<div class="col">
-					<a href="#" class="btn btn-outline-pagina">Ver Oferta</a>
+					<a class="btn btn-outline-pagina" data-toggle="modal" data-target="#mostrar_o">Ver Oferta</a>
 				</div>
+				<!-- Modal -->
+				
 			</div>
 		</div>
 

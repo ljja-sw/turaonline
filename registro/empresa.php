@@ -32,8 +32,7 @@ session_start();
       </div>
 
       <div class="col">
-        <form  id="form_registro_empresas" class="text-center" action="/php/registro.php?r=empresa" 
-       method="post">
+        <form  id="form_registro_empresas" class="text-center" action="/php/registro.php?r=empresa" method="post">
         <div class="titulo-registro">
           <h3>Formulario de Registro</h3>
           <h6 class="text-muted">-para empresas-</h6>
