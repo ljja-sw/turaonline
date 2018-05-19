@@ -1,19 +1,5 @@
 $(document).ready(function() {
 
-$('#filtro_sectores a').on('click', function(e){
-  e.preventDefault();
-  sector = this.id;
-    $.ajax({
-      url: "../ajax/lista_empresas.php",
-      type: "POST",
-      data: {sector:sector},
-        success: function(response){
-          $("#empresas").html(response)
-          this.addClass('active')
-        }
-  });
-});
-
   $('#fecha_vencimiento').datepicker({    
     format: 'dd/mm/yyyy',
     autoclose: true,

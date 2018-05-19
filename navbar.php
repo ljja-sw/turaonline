@@ -3,7 +3,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
 
   if(isset($_SESSION["nit"])){ ?>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-pagina" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-pagina">
     <div class="container-fluid">
       <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
       </a>
@@ -25,7 +25,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
           <a class="nav-link" data-toggle="modal" data-target="#buscar"><i class="fa fa-search"></i> Buscar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#publicarOferta"><i class="fa fa-indent"></i>
+          <a class="nav-link" href="../mi/empresa.php#cuadrito"><i class="fa fa-indent"></i>
 Publicar Oferta</a>
         </li>
         <li class="nav-item">
@@ -43,7 +43,7 @@ Publicar Oferta</a>
 
     <?php }else if(isset($_SESSION["cedula"])){ ?>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-pagina" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-pagina">
       <div class="container-fluid">
         <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
         </a>
@@ -78,7 +78,7 @@ Publicar Oferta</a>
 
         <?php }}else { ?>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-pagina" id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-pagina">
           <div class="container-fluid">
             <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
             </a>
