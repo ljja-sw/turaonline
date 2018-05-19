@@ -202,8 +202,8 @@ $f = new Funciones(); ?>
                     </div>
                     <div class="col-md-7 align-self-center">
                         <p class="h5-responsive">
-                            <?php echo $fila["nombre"]; ?>
-                            <span class="badge badge-pill bg-pagina"><?php echo $fila['puntaje']; ?></span>
+                            <?php echo $fila["nombre"]; ?><br>
+                            <small>Puntaje: <?php echo $fila['puntaje']; ?>/5</small>
                         </p>
                         <p class="h6-responsive text-muted">
                             <?php echo $fila['nombre_sector']; ?>
