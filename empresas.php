@@ -105,8 +105,6 @@ require "head.php";?>
 
         <!-- Sidebar -->
         <div class="col-md-3 ">
-            <div class="single sectores">
-                <div class="panel panel-pagina">
                     <div class="panel-heading">
                         <h3 class="panel-title">
                         Sectores</h3>
@@ -115,14 +113,12 @@ require "head.php";?>
                         <a href="#" id="" class="nav-link"> Ver Todas</a>
                         <?php $resultado = $funciones->ejecutarQuery("SELECT DISTINCT * FROM sector_empresarial");?>
                         <?php while ($sectores = mysqli_fetch_assoc($resultado)) {?>
-                                                                <li class="nav-item">
+                        <li class="nav-item">
                             <a href="#" id="<?php echo $sectores['id'] ?>" class="nav-link"> <?php echo $sectores['nombre'] ?></a>
-                                                                </li>
+                        </li>
 
                         <?php  } ?>
                     </ul>
-                </div>
-            </div>
         </div>
         <!-- Sidebar -->
 

@@ -1,7 +1,4 @@
 $(document).ready(function() {
-  $.urlParam = function(name){
-  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-  return results[1] || 0;}
 
 $('#form_login').on('submit', function(e) {
 e.preventDefault();
@@ -18,7 +15,6 @@ $.ajax({
   },success: function (response) {
     swal({
         title: "Iniciando Sesión",
-        html: response,
         type: 'success',
         timer: 2000,
         showConfirmButton: false,

@@ -77,8 +77,7 @@ $(document).ready(function() {
     $("#input_correo").val(correo)
 
     $("#div-btn-info").html("<button type='submit' form='form_info' id='btn-cambiar-info' class='btn btn-outline-primary float-right'>Listo</button>")
-
-  })
+  });
 
   $("#form_info").submit(function(e){
     e.preventDefault()

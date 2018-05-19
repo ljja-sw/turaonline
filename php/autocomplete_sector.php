@@ -1,8 +1,7 @@
 <?php 
 include 'conexion_db.php';
 
-//$sector = $_POST['input'];
-$sector = "";
+$sector = $_POST['input'];
 
 $C = new Conexion();
 $link = $C->conectar();
