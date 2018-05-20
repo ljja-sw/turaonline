@@ -9,7 +9,7 @@ function registro_oferta(){
 	$C = new Conexion();
 	$link = $C->conectar();
 
-	$idEmpresa = $_SESSION["id_empresa"];
+	$idEmpresa   =    $_SESSION["id_empresa"];
 	$titulo     	= mysqli_real_escape_string($link,$_POST['nom_oferta']);
 	$descripcion 	= mysqli_real_escape_string($link,$_POST['descripcion']);
 	$estudios       = mysqli_real_escape_string($link,$_POST['estudios']);
