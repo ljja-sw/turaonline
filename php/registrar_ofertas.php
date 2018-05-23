@@ -1,11 +1,7 @@
 <?php
-include 'login.php';
-include '../php/conexion_db.php';
-if(isset($_GET["r"]) && $_GET["r"] == "oferta"){
-	registro_oferta();
-}
+session_start();
+include_once '../php/conexion_db.php';
 
-function registro_oferta(){
 	$C = new Conexion();
 	$link = $C->conectar();
 
@@ -17,10 +13,10 @@ function registro_oferta(){
 	$salario		= mysqli_real_escape_string($link,$_POST['salario']);
 	$jornadaLaboral = mysqli_real_escape_string($link,$_POST['tjornada']);
 	$tipoContrato   = mysqli_real_escape_string($link,$_POST['tcontrato']);
-	$urgente_normal = mysqli_real_escape_string($link,$_POST['decaracter']);
+	$tipo = mysqli_real_escape_string($link,$_POST['decaracter']);
 	$estado_oferta	= "Activo";
 
-	$sql = "INSERT INTO ofertas (`id_empresa`, `titulo`, `descripcion`, `estudios`, `experiencia`, `salario`, `jornadaLaboral`, `tipoContrato`, `urgente_normal` `estado_oferta`) VALUES(".$idEmpresa.",'".$titulo."','".$descripcion."','".$estudios."', '".$experiencia."', '".$salario."', '".$jornadaLaboral."', '".$tipoContrato."', '".$urgente_normal."', '".$estado_oferta."');";
+	$sql = "INSERT INTO ofertas (`id_empresa`, `titulo`, `descripcion`, `estudios`, `experiencia`, `salario`, `jornadaLaboral`, `tipoContrato`,`tipo`,`estado_oferta`) VALUES ('".$idEmpresa."','".$titulo."','".$descripcion."','".$estudios."', '".$experiencia."', ".$salario.", '".$jornadaLaboral."', '".$tipoContrato."', '".$tipo."', '".$estado_oferta."');";
 
 	$resultado = mysqli_query($link,$sql);
 
@@ -35,7 +31,6 @@ function registro_oferta(){
 			break;
 		}
 	}else{
-		echo "Registro Completo $titulo";
+		header('HTTP/1.1 200 Oferta Publicada');
 	}
 	mysqli_close($link);
-}

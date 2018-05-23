@@ -1,8 +1,5 @@
-<div class="containe">
-  <!-- Trigger the modal with a button -->
-
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="subirHojaVida" tabindex="-1" role="dialog" aria-labelledby="subirHojaVida" aria-hidden="true">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -21,8 +18,6 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
     </div>
   </div>
   
-</div>

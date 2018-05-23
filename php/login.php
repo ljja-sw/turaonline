@@ -73,7 +73,7 @@ function login_aspirantes(){
 			if ($filas>0) {
 				while ($row=mysqli_fetch_assoc($resultado)){
 
-					$sector_empresa = mysqli_fetch_assoc(mysqli_query($link,"SELECT * FROM sector_empresarial WHERE id_sector=".$row["id_sector"].";")); 
+					// $sector_empresa = mysqli_fetch_assoc(mysqli_query($link,"SELECT * FROM sector_empresarial WHERE id_sector=".$row["id_sector"].";")); 
 
 					$_SESSION["nombre"]=$row["nombre"];
 					$_SESSION["sector"]=$sector_empresa['nombre_sector'];

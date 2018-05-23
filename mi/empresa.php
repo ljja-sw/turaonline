@@ -89,7 +89,7 @@ if ( $_SESSION["loggedin"] != true ) {
                     <h4><strong>Publica tu oferta</strong></h4>
                   </div>
 
-                  <form action="../php/registrar_ofertas.php?r=oferta" method="post">
+                  <form method="post" id='publicarOferta' action="../php/registrar_ofertas.php">
                   <div class="card-body">
                     <input id="nom_oferta" type="text" class="form-control" name="nom_oferta" placeholder="Nombre de Oferta" required>
                     <div class="form-group">

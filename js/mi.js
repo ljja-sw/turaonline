@@ -16,10 +16,12 @@ $(document).ready(function() {
         confirmButtonClass: 'btn btn-success',
         buttonsStyling: true
       }).then((result) => {
-        $(location).attr('href', '../index.php')})});});
+        $(location).attr('href', '../index.php')});
+    });
+  });
 
   /* JQuery disponibles en la seccion "mi" para los Aspirantes*/
-  $("#editar-pl").on("click", function(e){
+  $("#editar-pl").submit(function(e){
     var perfil_actual = $.trim($("#perfil-laboral").text())
     $("#cambiar-perfil")
     .html("<textarea name='pl' class='form-control' aria-label='Perfil Laboral'>"+perfil_actual+"</textarea>")
@@ -50,7 +52,8 @@ $(document).ready(function() {
        $("#btn-listo").addClass("hidden")
      }})});
 
-  $("#editar-info").click(function(){
+
+  $("#editar-info").click(function(e){
     var direccion,teléfono,correo
     direccion =  $.trim($("#direccion").text())
     telefono =  $.trim($("#telefono").text())
@@ -97,19 +100,17 @@ $(document).ready(function() {
         $("#info").load("../ajax/informacion_aspirante.php").show()
         $("#btn-cambiar-info , #form_info").addClass("hidden")
       },
-      error : function(){
-
-      }
-    })
-  })
+      error : function(){}
+    });
+  });
 
 
-  /* 
+  /*
 
     JQuery disponibles en la seccion "mi" para las empresas
 
   */
-  $("#editar-desc").on("click", function(e){
+  $("#editar-desc").click(function(e){
     var perfil_actual = $.trim($("#descripcion").text())
     $("#cambiar-desc")
     .html("<textarea name='ds' class='form-control' aria-label='Perfil Laboral'>"+perfil_actual+"</textarea>")
@@ -117,9 +118,9 @@ $(document).ready(function() {
     $("#descripcion").addClass("hidden")
     $("#btn-listo").html("<button type='submit' form='cambiar-desc' class='btn btn-outline-primary'>Listo</button>")
     $(this).addClass("hidden")
-  })
+  });
 
-  $("#cambiar-desc").on("submit", function(e){
+  $("#cambiar-desc").submit(function(e){
     var form_data = new FormData(this);
     e.preventDefault();
     $.ajax({
@@ -137,12 +138,35 @@ $(document).ready(function() {
        $("#cambiar-desc").addClass("hidden");
        $("#descripcion").removeClass("hidden").load("../ajax/desc_empresa.php")
        $("#editar-desc").removeClass("hidden")
-       $("#btn-listo").addClass("hidden")
+       $("#btn-listo").addClass("hidden")} 
+     });
+  });
 
-     } })
-  })
+  $("#publicarOferta").submit(function(e){
+    e.preventDefault()
+    $.ajax({
+        url :"../php/registrar_ofertas.php",
+        type: "POST",
+        contentType: false,
+        cache: false,
+        processData: false,
+        data: new FormData(this),
+        success: function(response) {
+        swal({
+          title: "Oferta Publicada",
+          type: 'success',
+          showConfirmButton: true})
+        $(this).closest('form').find("input[type=text], textarea").val("");
+        },
+        error: function(){
+          alert("error")
+        }
+    });
+  });
 
-})//Cierra JQUERY
+
+
+});//Cierra JQUERY
 
 function readURL(input) {
   if (input.files && input.files[0]) {
