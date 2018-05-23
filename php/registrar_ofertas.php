@@ -1,6 +1,7 @@
 <?php
-include 'login.php';
+session_start();
 include '../php/conexion_db.php';
+
 if(isset($_GET["r"]) && $_GET["r"] == "oferta"){
 	registro_oferta();
 }
