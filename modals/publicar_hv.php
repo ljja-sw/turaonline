@@ -10,8 +10,8 @@
         </div>
         <div class="modal-body row">
           <p>Some text in the modal.</p>
-          <input id="nom_oferta" type="text" class="col-md-4 form-control" name="nom_oferta">
-          <button type="button" class="col-md-4 btn btn-default" >Seleccionar</button>
+          <input id="nom_oferta" type="text" class="col-md-11 form-control" name="nom_oferta">
+          <button type="button" class="btn btn-default" >Seleccionar</button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" >Subir HV</button>
