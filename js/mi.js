@@ -1,3 +1,24 @@
+
+function formatFileSize(bytes,decimalPoint) {
+   if(bytes == 0) return '0 Bytes';
+   var k = 1000,
+       dm = decimalPoint || 2,
+       sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+       i = Math.floor(Math.log(bytes) / Math.log(k));
+   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#foto_perfil')
+      .attr('src', e.target.result);};
+      reader.readAsDataURL(input.files[0]);
+      $('#cambiar_foto').removeClass('hidden');
+    }}
+
+
 $(document).ready(function() {
 
   $('#form_cambiar_foto').submit(function(e){
@@ -112,8 +133,7 @@ $(document).ready(function() {
   */
   $("#editar-desc").click(function(e){
     var perfil_actual = $.trim($("#descripcion").text())
-    $("#cambiar-desc")
-    .html("<textarea name='ds' class='form-control' aria-label='Perfil Laboral'>"+perfil_actual+"</textarea>")
+    $("#cambiar-desc").html("<textarea name='ds' id='descripcionEmpresa' class='form-control' aria-label='Perfil Laboral'>"+perfil_actual+"</textarea>")
     $("#cambiar-desc").removeClass("hidden")
     $("#descripcion").addClass("hidden")
     $("#btn-listo").html("<button type='submit' form='cambiar-desc' class='btn btn-outline-primary'>Listo</button>")
@@ -153,10 +173,10 @@ $(document).ready(function() {
         data: new FormData(this),
         success: function(response) {
         swal({
-          title: "Oferta Publicada",
+          title: response,
           type: 'success',
           showConfirmButton: true})
-        $(this).closest('form').find("input[type=text], textarea").val("");
+        $(this).find("input[type=text], textarea").val("")
         },
         error: function(){
           alert("error")
@@ -164,16 +184,43 @@ $(document).ready(function() {
     });
   });
 
+  $("#form-hv").change(function(e){
+    archivo = $("#archivo_hv").get(0)
+      $("#div-archivo").hide()
+      $("#subir").show()
+      datos_archivo = archivo.files[0].name
+      datos_archivo += "<br> Tamaño:"
+      datos_archivo += formatFileSize(archivo.files[0].size)
+      $("#subir p").html(datos_archivo)
+  });
+
+  $("#form-hv").submit(function(e){
+    e.preventDefault();
+    $.ajax({
+      url : '../php/subir_hv.php',
+      type: "POST",
+      data: new FormData(this),
+      contentType: false,
+      cache: false,
+      processData: false,
+      success: function(response){
+        swal({
+          title: response,
+          type: 'success',
+          showConfirmButton: true}).then((result) => {
+        $(location).attr('href', '../mi/perfil.php');
+    });
+      },
+      error: function(xhr, ajaxOptions, thrownError){
+        swal({
+          title: thrownError,
+          type: 'error',
+          showConfirmButton: true})
+              $("#div-archivo").show()
+      }
+    });
+  });
+
 
 
 });//Cierra JQUERY
-
-function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      $('#foto_perfil')
-      .attr('src', e.target.result);};
-      reader.readAsDataURL(input.files[0]);
-      $('#cambiar_foto').removeClass('hidden');
-    }}

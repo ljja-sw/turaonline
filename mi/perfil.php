@@ -7,15 +7,17 @@
 <?php
 $titulo = "Mi Perfíl";
 require "../head.php";
+require_once "../php/Funciones.php";
 
+$f = new Funciones();
 if ( $_SESSION["loggedin"] != true ) {
  header("Location: ../index.php");}?>
- <link rel="stylesheet" type="text/css" href="../css/perfil.css">   
+ <link rel="stylesheet" type="text/css" href="/css/perfil.css">   
 
  <body>
-<?php require "../navbar.php";?>
+  <?php require "../navbar.php";?>
 
-  <section class="fondo-cabecera padding">
+  <section class="fondo-cabecera padding mb-4">
     <section class="container cabecera"><!-- Container Principal -->
       <div class="card card-cabecera"><!-- Card prefil -->
         <div class="card-body">
@@ -41,60 +43,99 @@ if ( $_SESSION["loggedin"] != true ) {
     </section>
   </section>
 
-    <br>
+  <section class="container"><!-- Container Principal -->
+    <div class="row"> 
 
-    <section class="container"><!-- Container Principal --><div class="row"> 
+    <div class="col-md-5"> <!-- Informacion Aspirante -->
+      <div class="card"><!--Card-->
 
-      <div class="col-md-5"> <!-- Informacion Aspirante -->
-        <div class="card"><!--Card-->
+        <div class="card-header principal">
+          <h4><strong>Información</strong></h4>
+        </div>
 
-          <div class="card-header principal">
-            <h4><strong>Información</strong></h4>
+        <div id="panel_informacion" class="card-body">
+          <div id="info">
+            <?php require("../ajax/informacion_aspirante.php") ?>
+          </div>
+          <form id="form_info" type="POST"></form>
+        </div>
+
+        <div class="card-footer">
+          <div id="div-btn-info"></div>
+          <a href="#" id="editar-info">Editar</a>
+        </div>
+
+      </div><!-- Card -->
+    </div><!-- Informacion Aspirante -->
+
+    <div class="col-md-7"> <!-- Perfil laboral-->
+      <div class="card"><!--Card -->
+        <div class="card-header principal">
+          <h4><strong>Perfil laboral</strong></h4>
+        </div>
+        <div class="card-body">
+
+          <div id="perfil-laboral">
+            <?php require "../ajax/perfil_laboral.php" ?>
           </div>
 
-          <div id="panel_informacion" class="card-body">
-            <div id="info">
-              <?php require("../ajax/informacion_aspirante.php") ?>
+          <form id="cambiar-perfil" class="input-group hidden">
+            <!-- Form generada por JQyery es insertada aquí -->
+          </form>
+
+        </div>
+        <div class="card-footer">
+          <div id="btn-listo"></div>
+          <a href="#" id="editar-pl">Editar</a>
+        </div>
+      </div><!-- Card -->
+    </div><!-- Perfil laboral-->
+
+    <div class="col-md-6 col-sm-12"> <!-- Hoja de Vida -->
+      <div class="card"><!-- Hoja de Vida -->
+
+        <div class="card-header">
+          <h4><strong>Publicar Hoja de Vida</strong><i class="fa fa-address-card float-right"></i></h4>
+        </div>
+        
+        <div class="card-body">
+
+          <form id="form-hv"  class="form-horizontal" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <div class="text-center">
+                
+                <input id="archivo_hv" name="hv" class="hidden"  type="file" />
+                
+                <a class="small btn btn-pagina" id="div-archivo" onclick="$('#archivo_hv').click();">
+                  <i class="fa fa-upload"></i><br>
+                  Seleccionar Archivo
+                </a><br>
+              <p>Ultima actualización: <?php 
+$r = $f->ejecutarQuery("SELECT fecha_carga from hv_aspirantes where id_aspirante =".$_SESSION['id_usuario']);
+$fila = mysqli_fetch_assoc($r);
+echo $fecha = ($fila['fecha_carga'] == "") ? "Nunca" :  $f->tiempo($fila['fecha_carga']) ;
+               ?></p>
+                
+                <p class="small">Tamaño Máximo <b>2048KB aprx</b> </p>
+
+              <div id="subir" class="hidden">
+                <p>Nombre Archivo</p>
+                <button id="btn-subir-hv"  class="btn btn-primary" type="submit"><i class="fa fa-upload"></i> Subir</button>
+              </div>
+
             </div>
-            <form id="form_info" type="POST"></form>
-          </div>
+          </form>
 
-          <div class="card-footer">
-            <div id="div-btn-info"></div>
-            <a href="#" id="editar-info">Editar</a>
-          </div>
+          <hr>
+          <p class="text-muted text-center">Descarga la plantilla de <strong>Hoja de Vida</strong><a href="#"> aqui <i class="fa fa-cloud-download-alt"></i></a></p>
+        </div>
 
-        </div><!-- Card -->
-      </div><!-- Informacion Aspirante -->
+      </div><!-- Card -->
+    </div><!-- Col -->
 
-      <div class="col-md-7"> <!-- Perfil laboral-->
-        <div class="card"><!--Card -->
-          <div class="card-header principal">
-            <h4><strong>Perfil laboral</strong></h4>
-          </div>
-          <div class="card-body">
-
-            <div id="perfil-laboral">
-              <?php require "../ajax/perfil_laboral.php" ?>
-            </div>
-
-            <form id="cambiar-perfil" class="input-group hidden">
-              <!-- Form generada por JQyery es insertada aquí -->
-            </form>
-
-          </div>
-          <div class="card-footer">
-            <div id="btn-listo"></div>
-            <a href="#" id="editar-pl">Editar</a>
-          </div>
-        </div><!-- Card -->
-
-      </div><!-- Perfil laboral-->
-
-    </div>
-  </section>
-    <?php include "../footer.php" ?>
-    <script src="../js/mi.js" type="text/javascript"></script>
-
-  </body>
-  </html>
+  </div>
+</section>
+<?php include "../footer.php" ?>
+<script src="../js/mi.js" type="text/javascript"></script>
+</body>
+</html>

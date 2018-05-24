@@ -7,12 +7,11 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
     <div class="container-fluid">
       <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
       </a>
-    </img>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav m1-auto justify-items-center">
+      <ul class="navbar-nav m1-auto align-items-center">
         <li class="nav-item">
           <a class="nav-link  cursor-dedo" href="../empresas.php"><i class="fa fa-briefcase prefix"></i> Empresas</a>
         </li>
@@ -47,7 +46,6 @@ Publicar Oferta</a>
       <div class="container-fluid">
         <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
         </a>
-      </img>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -85,7 +83,6 @@ Publicar Oferta</a>
           <div class="container-fluid">
             <a class="navbar-brand float-center " href="../index.php"> <img class="logo" src="../img/brand.png">
             </a>
-          </img>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
