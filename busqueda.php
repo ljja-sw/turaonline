@@ -141,7 +141,7 @@ $funciones = new Funciones();
 									</div>
 									<div class="row">
 										<?php
-										$query = "SELECT titulo,tipo,fecha_publicacion,fecha_vencimiento,empresas.nombre,empresas.nit,ofertas.descripcion
+										$query = "SELECT titulo,empresas.nombre,empresas.nit,ofertas.descripcion
 										FROM ofertas INNER JOIN empresas ON empresas.id = ofertas.id_empresa WHERE titulo LIKE '%$busqueda%' OR ofertas.descripcion LIKE '%$busqueda%' OR empresas.nombre LIKE '%$busqueda%'; ";
 										$resultado = $funciones->
 										ejecutarQuery($query);

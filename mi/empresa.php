@@ -31,7 +31,7 @@ if ( $_SESSION["loggedin"] != true ) {
                 <button id="cambiar_foto" class="btn btn-primary btn-lg btn-block hidden">Listo</button>
               </form>
             </div>
-
+            
             <div class="div-foto col-md-6 col-sm-6">
               <h2 class="display-responsive-4" id="nombre"><?php echo $_SESSION["nombre"]; ?>
                 <h3 id="sector_empresa"><?php echo $_SESSION["sector"]; ?></h3>
@@ -89,7 +89,7 @@ if ( $_SESSION["loggedin"] != true ) {
                     <h4><strong>Publica tu oferta</strong></h4>
                   </div>
 
-                  <form method="post" id='publicarOferta' action="../php/registrar_ofertas.php">
+                  <form id='publicarOferta' action="../php/registrar_ofertas.php" method="post">
                   <div class="card-body">
                     <input id="nom_oferta" type="text" class="form-control" name="nom_oferta" placeholder="Nombre de Oferta" required>
                     <div class="form-group">
@@ -97,7 +97,7 @@ if ( $_SESSION["loggedin"] != true ) {
                       <textarea class="form-control" rows="5" name="descripcion" id="descripcion" required></textarea>
                     </div>
                     <input id="estudios" type="text" class="form-control" name="estudios" placeholder="Estudios requeridos" required>
-                    <input id="experiencia" type="text" class="form-control" name="experiencia" placeholder="Años de experiencia" required>
+                    <input id="experiencia" type="text" class="form-control" name="experiencia" placeholder="Tiempo de experiencia" required>
                     <input id="salario" type="text" class="form-control" name="salario" placeholder="Salario" required>
                     <div class="form-group">
                       <div class="col-xs-5 selectContainer">

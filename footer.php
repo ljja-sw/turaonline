@@ -86,13 +86,13 @@
                 </h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a href="#!">Su cuenta</a>
+                    <a href="mi/perfil.php">Su cuenta</a>
                 </p>
                 <p>
                     <a href="#!">Empresas</a>
                 </p>
                 <p>
-                    <a href="#!">Ofertas de empleo</a>
+                    <a href="ofertas.php">Ofertas de empleo</a>
                 </p>
                 <p>
                     <a href="#!">Publicar HV</a>
