@@ -8,6 +8,7 @@ $titulo = "Empresas";
 require "head.php";?>
 <link href="../css/empresas.css" rel="stylesheet" type="text/css">
 <body>
+
     <?php require "navbar.php";
           require "php/Funciones.php";
     $funciones = new Funciones();

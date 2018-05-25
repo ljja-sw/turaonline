@@ -1,4 +1,5 @@
 <?php
+
 		include_once '../php/conexion_db.php';
 
 		$BD = new Conexion();
@@ -10,17 +11,21 @@ $query = "SELECT titulo FROM ofertas INNER JOIN empresas ON ofertas.id_empresa =
 $resultado = mysqli_query($link, $query);
 clearstatcache();
 if (mysqli_num_rows($resultado)>0) {
-	while ($fila = mysqli_fetch_assoc($resultado)) {?>
+	while ($fila = mysqli_fetch_assoc($resultado)) {
+		$_SESSION["titulo"] = $fila['titulo'];
+	?>
+		
 
 		<div class="row">
         	<h5 class="col-md-6">
         		<strong>
-              		<?php echo $fila['titulo']; ?>
+              		<?php echo $_SESSION["titulo"]; ?>
         		</strong>
         	</h5>
         	<a class="col-md-2" href="#">Editar</a>
         	<a class="col-md-2" href="#">Eliminar</a>
-          	<a class="col-md-2" data-toggle="modal" data-target="#publicarOferta">Ver</a>
+        	<!-- data-toggle="modal" data-target="#publicarOferta" -->
+          	<a class="col-md-2" href="../tabla_aspirantes.php">Ver</a>
         </div>
 
 <?php }

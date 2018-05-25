@@ -148,7 +148,11 @@ if ( $_SESSION["loggedin"] != true ) {
                   <div class="card-body">
                     <?php include '../ajax/ofertas_publicadas.php' ?>
                   </div>
-                  
+                  <div>
+                    <div class="modal-footer">
+                        <a type="label" class="nav-link"  href="../tabla_aspirantes.php">Ver Aspirantes</a>
+                    </div>
+                  </div>
                 </div><!-- Card -->
               </div><!-- Col -->
 

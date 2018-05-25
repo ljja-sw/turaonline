@@ -1,0 +1,24 @@
+.table-wrapper {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.container{
+	position: relative;
+	top: 30px;
+	margin-bottom: 20px;
+}
+
+.narrower{
+	border-radius: 6px;
+}
+.narrower .btn{
+	border-radius: 15px;
+}
+.form-control{
+	border-top: transparent;
+	border-left: transparent;
+	border-right: transparent;
+}

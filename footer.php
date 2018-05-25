@@ -1,6 +1,6 @@
 
 <!--Footer-->
-<footer class="page-footer font-small bg-pagina pt-0">
+<footer class="page-footer font-small bg-pagina pt-0" style="margin-top: 60px;">
 
     <div style="background-color: #002945;">
         <div class="container">
