@@ -68,7 +68,7 @@ if ( $_SESSION["loggedin"] != true ) {
       </div><!-- Card -->
     </div><!-- Informacion Aspirante -->
 
-    <div class="col-md-7"> <!-- Perfil laboral-->
+    <div class="col-md-7 my-auto"> <!-- Perfil laboral-->
       <div class="card"><!--Card -->
         <div class="card-header principal">
           <h4><strong>Perfil laboral</strong></h4>
@@ -91,7 +91,7 @@ if ( $_SESSION["loggedin"] != true ) {
       </div><!-- Card -->
     </div><!-- Perfil laboral-->
 
-    <div class="col-md-6 col-sm-12"> <!-- Hoja de Vida -->
+    <div class="col-md-6 col-sm-12 mx-auto"> <!-- Hoja de Vida -->
       <div class="card"><!-- Hoja de Vida -->
 
         <div class="card-header">
@@ -109,14 +109,15 @@ if ( $_SESSION["loggedin"] != true ) {
                 <a class="small btn btn-pagina" id="div-archivo" onclick="$('#archivo_hv').click();">
                   <i class="fa fa-upload"></i><br>
                   Seleccionar Archivo
-                </a><br>
+                </a>
+                                <p class="small">Tamaño Máximo <b>2048KB aprx</b> </p>
+<br>
               <p>Ultima actualización: <?php 
-$r = $f->ejecutarQuery("SELECT fecha_carga from hv_aspirantes where id_aspirante =".$_SESSION['id_usuario']);
+$r = $f->ejecutarQuery("SELECT fecha_carga,directorio from hv_aspirantes where id_aspirante =".$_SESSION['id_usuario']);
 $fila = mysqli_fetch_assoc($r);
 echo $fecha = ($fila['fecha_carga'] == "") ? "Nunca" :  $f->tiempo($fila['fecha_carga']) ;
-               ?></p>
+               ?><br>Ver Hoja de Vida: <a href="<?php echo $fila['directorio']?>" target="_blank">Aqui</a></p>
                 
-                <p class="small">Tamaño Máximo <b>2048KB aprx</b> </p>
 
               <div id="subir" class="hidden">
                 <p>Nombre Archivo</p>

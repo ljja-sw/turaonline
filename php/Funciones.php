@@ -9,6 +9,7 @@ class Funciones
 {
 
 	function tiempo($date) {
+	   date_default_timezone_set('America/Bogota');
 	   $timestamp = strtotime($date);	
 	   
 	   $strTime = array("segundo", "minuto", "hora", "dia", "mes", "año");
