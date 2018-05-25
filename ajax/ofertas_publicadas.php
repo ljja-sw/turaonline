@@ -6,7 +6,7 @@
 		$link = $BD->conectar();
 
 
-$query = "SELECT titulo FROM ofertas INNER JOIN empresas ON ofertas.id_empresa =".$_SESSION['id_empresa'].";";
+$query = "SELECT DISTINCT titulo FROM ofertas INNER JOIN empresas ON ofertas.id_empresa =".$_SESSION['id_empresa'].";";
 
 $resultado = mysqli_query($link, $query);
 clearstatcache();
