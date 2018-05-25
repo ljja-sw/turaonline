@@ -125,6 +125,7 @@ echo $fecha = ($fila['fecha_carga'] == "") ? "Nunca" :  $f->tiempo($fila['fecha_
               </div>
 
             </div>
+          </div>
           </form>
 
           <hr>
