@@ -1,5 +1,5 @@
 <?php 
-  include 'php/Funciones.php';
+  include '../php/Funciones.php';
   $f = new Funciones();
 
 switch ($_GET["s"]) {
@@ -108,5 +108,5 @@ function bOfertaFP($valor){
 			<h1 class="display-4">No hay Ofertas para Mostrar</h1>
 			<strong><p>No te preocupes muy pronto estarán disponibles</p></strong>
 		</div>
-	<?php } ?>
+	<?php }
 } ?>
