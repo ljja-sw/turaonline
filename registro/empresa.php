@@ -17,8 +17,6 @@ session_start();
   <link href="/vendor/mdb-bootstrap/css/mdb.min.css" rel="stylesheet">
   <link href="/vendor/foundation-icons/foundation-icons.css" rel="stylesheet">
   <link href="/vendor/sweetalert/css/sweetalert2.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/vendor/jquery/jquery-ui.theme.min.css">
-  <link rel="stylesheet" type="text/css" href="/vendor/jquery/jquery-ui.structure.min.css">
   <link href="/css/login_registro.css" rel="stylesheet">
 </head>
 

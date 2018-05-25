@@ -38,13 +38,8 @@ function registroAspirantes(){
   alert(error);
     return false;
   }
-  else if (telefono.length>10) {
+  else if (telefono.length>13) {
   error = "El teléfono es muy largo";
-  alert(error);
-    return false;
-  }
-  else if (isNaN(telefono)) {
-  error = "El dato ingresado no es un número de teléfono";
   alert(error);
     return false;
   }

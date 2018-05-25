@@ -65,26 +65,6 @@ $("#correo_d,#correo").emailautocomplete({
   domains: ["gmail.com","hotmail.com","outlook.com","hotmail.es"]
 });
 
-$("#sector").keyup(function(e) {
- $.ajax({
-  url: "../php/autocomplete_sector.php",
-  dataType: "json",
-  type: "POST",
-  data: { 'input' : $("#sector").val() },
-  contentType: false,
-  cache: false,
-  processData:false,
-  success : function(response){
-    $("#sector").autocomplete({ source: response })
-    } 
-  });
-});
-
-$("#fecha_nacimiento_d").click(function(){
-  $(this).datepicker({ dateFormat: 'dd-mm-yyyy' });
-  $(this).val($(this).text)
-});
-
 $("#confirmacion_contrasenia").keyup(function(){
   if ( $("#contrasenia_d").val() != $(this).val() ) {
     $(this).css({"border-bottom": "1px solid #720e07","box-shadow": "0px 1px 0px 0px #720e07"})

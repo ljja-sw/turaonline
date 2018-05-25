@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-<!DOCTYPE html>
 <html lang="es">
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -14,8 +13,7 @@
   <link href="/vendor/mdb-bootstrap/css/mdb.min.css" rel="stylesheet">
   <link href="/vendor/foundation-icons/foundation-icons.css" rel="stylesheet">
   <link href="/vendor/sweetalert/css/sweetalert2.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/vendor/jquery/jquery-ui.theme.min.css">
-  <link rel="stylesheet" type="text/css" href="/vendor/jquery/jquery-ui.structure.min.css">
+  <link href="/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" >
   <link href="/css/login_registro.css" rel="stylesheet">
 </head>
 
@@ -95,7 +93,6 @@
   </section>
   <!-- Bootstrap core JavaScript -->
   <script src="/vendor/jquery/jquery.min.js" type="text/javascript"></script>
-  <script src="/vendor/jquery/jquery-ui.min.js" type="text/javascript"></script>
   <script src="/vendor/mdb-bootstrap/js/bootstrap.js" type="text/javascript"></script>
   <script src="/vendor/mdb-bootstrap/js/mdb.js" type="text/javascript"></script>
   <script src="/vendor/mdb-bootstrap/js/popper.min.js" type="text/javascript"></script>
@@ -103,5 +100,19 @@
   <script src="/vendor/email-autocomplete/jquery.email-autocomplete.js" type="text/javascript"></script>
   <script src="/js/registro.js" type="text/javascript"></script>
   <script src="/js/validar-registro.js" type="text/javascript"></script>
+  <script src="/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+  <script src="/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js" type="text/javascript"></script>
+  <script src="/vendor/input-mask/jquery.inputmask.js"></script>
+  <script src="/vendor/input-mask/jquery.inputmask.phone.extensions.js"></script>
+
+  <script type="text/javascript">
+  $('#fecha_nacimiento_d').datepicker({    
+    format: 'dd/mm/yyyy',
+    autoclose: true,
+    language: 'es'})
+
+  $("#numero_tel_d").inputmask('999-999-9999')
+  </script>
+
 </body>
 </html>

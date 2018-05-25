@@ -150,7 +150,7 @@ if ( $_SESSION["loggedin"] != true ) {
                   </div>
                   <div>
                     <div class="modal-footer">
-                        <a type="label" class="nav-link"  href="../tabla_aspirantes.php">Ver Aspirantes</a>
+                        <a type="label" class="nav-link"  href="../oferta/aspirantes.php">Ver Aspirantes</a>
                     </div>
                   </div>
                 </div><!-- Card -->

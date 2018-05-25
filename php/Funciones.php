@@ -41,7 +41,6 @@ class Funciones
         echo $empresas[$tabla];
 	}
 
-
 	function datosEmpresa($nit_empresa){
 		$empresa = new Empresa();
 		$query = "SELECT empresas.nombre, correo, hash_contrasena, nit, direccion, telefono, descripcion,sector_empresarial.nombre as nombre_sector FROM empresas INNER JOIN sector_empresarial ON empresas.id_sector = sector_empresarial.id WHERE nit='".$nit_empresa."';";

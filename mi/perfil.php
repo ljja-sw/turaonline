@@ -113,9 +113,9 @@ if ( $_SESSION["loggedin"] != true ) {
                                 <p class="small">Tamaño Máximo <b>2048KB aprx</b> </p>
 <br>
               <p>Ultima actualización: <?php 
-$r = $f->ejecutarQuery("SELECT fecha_carga,directorio from hv_aspirantes where id_aspirante =".$_SESSION['id_usuario']);
-$fila = mysqli_fetch_assoc($r);
-echo $fecha = ($fila['fecha_carga'] == "") ? "Nunca" :  $f->tiempo($fila['fecha_carga']) ;
+                  $r = $f->ejecutarQuery("SELECT fecha_carga,directorio from hv_aspirantes where id_aspirante =".$_SESSION['id_usuario']);
+                  $fila = mysqli_fetch_assoc($r);
+                  echo $fecha = ($fila['fecha_carga'] == "") ? "Nunca" :  $f->tiempo($fila['fecha_carga']) ;
                ?><br>Ver Hoja de Vida: <a href="<?php echo $fila['directorio']?>" target="_blank">Aqui</a></p>
                 
 
@@ -128,7 +128,7 @@ echo $fecha = ($fila['fecha_carga'] == "") ? "Nunca" :  $f->tiempo($fila['fecha_
           </form>
 
           <hr>
-          <p class="text-muted text-center">Descarga la plantilla de <strong>Hoja de Vida</strong><a href="#"> aqui <i class="fa fa-cloud-download-alt"></i></a></p>
+          <p class="text-muted text-center">Descarga la plantilla de <strong>Hoja de Vida</strong><a href="../store/default/pantilla_hv.docx"> aqui <i class="fa fa-cloud-download-alt"></i></a></p>
         </div>
 
       </div><!-- Card -->
