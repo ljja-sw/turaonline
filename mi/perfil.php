@@ -125,6 +125,7 @@ if ( $_SESSION["loggedin"] != true ) {
               </div>
 
             </div>
+          </div>
           </form>
 
           <hr>
