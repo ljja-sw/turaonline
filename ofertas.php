@@ -15,7 +15,7 @@
 	$titulo = "Ofertas";
 	require "head.php"; 
 ?>
-<link rel="stylesheet" type="text/css" href="css/ofertas.css">
+<link rel="stylesheet" href="css/ofertas.css">
 
 <body>
 	<?php include 'navbar.php';?>
@@ -38,10 +38,10 @@
 								<label class="col-9 col-md-10" for="check3" action="ajax/busqueda_oferta.php?s=US">Última samana</label><input class="col-3 col-md-2 input" id="check3" type="checkbox" value="Última samana">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="check4" action="ajax/busqueda_oferta.php?s=U15D">Últimos 15 días</label><input class="col-3 col-md-2 input" id="check4" type="checkbox">
+								<label class="col-9 col-md-10" for="check4" action="ajax/busqueda_oferta.php?s=U15D">Últimos 15 días</label><input class="col-3 col-md-2 input" id="check4" type="checkbox" value="Últimos 15 días">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="check5" action="ajax/busqueda_oferta.php?s=UM">Último mes</label><input class="col-3 col-md-2 input" id="check5" type="checkbox">
+								<label class="col-9 col-md-10" for="check5" action="ajax/busqueda_oferta.php?s=UM">Último mes</label><input class="col-3 col-md-2 input" id="check5" type="checkbox" value="Último mes">
 							</div>
 					</div>
 				</div>
@@ -121,7 +121,6 @@
 							</div>
 					</div>
 				</div>
-				<button type="button" class="btn btn-primary btn-lg btn-block" id="btnMiBotonsito">ACEPTAR</button>
 			</div>
 			<div class="col-12 col-md-8">
 					<?php include 'ajax/lista_ofertas.php'; ?>

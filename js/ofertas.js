@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 
 $("#aplicar_oferta").click(function(e){
 	swal({
@@ -92,4 +92,4 @@ $(".listo").click(function(e){
   });
 });
 
-});//Close JQuery
+});//Close JQuery*/

@@ -15,6 +15,8 @@ $empresa = $funciones->datosEmpresa($_GET['id']);
 $titulo = $empresa->getNombre();
 require "../head.php";?>
 <link rel='shortcut icon' href='<?php echo $empresa->getFavico_empresa() ?>'>
+<link rel="stylesheet" type="text/css" href="../css/ofertas.css">
+<link rel="stylesheet" type="text/css" href="../css/estilos_estrellas.css">
 
 <body>
 <?php require "../navbar.php";?>
@@ -68,7 +70,23 @@ require "../head.php";?>
             <h1>Calificaciones</h1>
         </div>
         <div class="row">
-            <p>Son las opiniones y todo eso.</p>
+            <p class="col-md-12">Son las opiniones y todo eso.</p>
+            <div class="col evaluacion col-md-5">
+                <form class="form">
+                    <p class="clasificacion row">
+                       <input class="label"id="radio1" type="radio" name="estrellas" value="5"><!--
+                    --><label class="label col-md-2" for="radio1">★</label><!--
+                    --><input class="label" id="radio2" type="radio" name="estrellas" value="4"><!--
+                    --><label class="label col-md-2" for="radio2">★</label><!--
+                    --><input class="label" id="radio3" type="radio" name="estrellas" value="3"><!--
+                    --><label class="label col-md-2" for="radio3">★</label><!--
+                    --><input class="label" id="radio4" type="radio" name="estrellas" value="2"><!--
+                    --><label class="label col-md-2" for="radio4">★</label><!--
+                    --><input class="label" id="radio5" type="radio" name="estrellas" value="1"><!--
+                    --><label class="label col-md-2" for="radio5">★</label>
+                    </p>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -78,6 +96,7 @@ require "../head.php";?>
         </div>
         <div class="row">
             <p>La ultimas ofertas publicadas.</p>
+
         </div>
     </div>
 
