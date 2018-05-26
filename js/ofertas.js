@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 
 $("#aplicar_oferta").click(function(e){
 	swal({
@@ -39,4 +39,4 @@ $("#aplicar_oferta").click(function(e){
 });
 
 
-});//Close JQuery
+});//Close JQuery*/

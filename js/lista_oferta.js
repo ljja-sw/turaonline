@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-  // Comprobacion usando .prop() (jQuery > 1.6)
+  // Comprobacion usando .prop()
   if ($('#check1').prop('checked') ) {
     console.log("seleccionado");
   }
-  // Comprobacion usando .attr() (jQuery < 1.6)
+  // Comprobacion usando .attr()
   if ($('#check2').attr('checked') ) {
     console.log("seleccionado");
   }
@@ -31,10 +31,9 @@ $(document).ready(function() {
         $('input[type=checkbox]:checked').each(function() {
           CheckSeleccionados.push($(this).val());
         });
-
-        alert("Dias seleccionados => " + CheckSeleccionados);
+        alert("Has seleccionados => " + CheckSeleccionados);
       }else{
-        alert($(this).prop("id") +  " (" + $(this).val() + ") => Deseleccionado");
+        alert($(this).val());
       }
   });
 
