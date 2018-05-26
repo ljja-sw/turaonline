@@ -22,10 +22,6 @@ if (mysqli_num_rows($resultado)>0) {
               		<?php echo $_SESSION["titulo"]; ?>
         		</strong>
         	</h5>
-        	<a class="col-md-2" href="#">Editar</a>
-        	<a class="col-md-2" href="#">Eliminar</a>
-        	<!-- data-toggle="modal" data-target="#publicarOferta" -->
-          	<a class="col-md-2" href="../tabla_aspirantes.php">Ver</a>
         </div>
 
 <?php }

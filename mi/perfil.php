@@ -5,8 +5,11 @@ require "../head.php";
 require_once "../php/Funciones.php";
 
 $f = new Funciones();
-if ( $_SESSION["loggedin"] != true ) {
- header("Location: ../index.php");}?>
+if (!isset($_SESSION['cedula'])) {
+   header("Location: ../index.php", true, 301);
+ }
+?>
+
  <link rel="stylesheet" type="text/css" href="/css/perfil.css">   
 
  <body>
@@ -63,7 +66,7 @@ if ( $_SESSION["loggedin"] != true ) {
       </div><!-- Card -->
     </div><!-- Informacion Aspirante -->
 
-    <div class="col-md-7 my-auto"> <!-- Perfil laboral-->
+    <div class="col-md-7"> <!-- Perfil laboral-->
       <div class="card"><!--Card -->
         <div class="card-header principal">
           <h4><strong>Perfil laboral</strong><i class="fa fa-user float-right"></i></h4>
@@ -129,7 +132,7 @@ if ( $_SESSION["loggedin"] != true ) {
       </div><!-- Card -->
     </div><!-- Col -->
 
-              <div class="col-md-6"> <!-- Col -->
+              <div class="col-md-6 "> <!-- Col -->
                 <div class="card"><!--Card -->
                   <div class="card-header">
                     <h4><strong>Lita de Ofertas</strong><i class="fa fa-list-ol float-right"></i></h4>
@@ -169,16 +172,6 @@ if (mysqli_num_rows($resultado)>0) {
 <?php }?>
                   </div>
                 </div><!-- Card -->
-
-                    <div class="card">
-    <div class="card-header bg-danger">
-      <h4><strong>Eliminar Cuenta</strong><i class="fa fa-trash float-right"></i></h4>
-    </div>
-    <div class="card-body mx-auto">
-    <button type="button" class="btn btn-danger">Eliminar Cuenta</button>
-    </div>
-    </div>
-
               </div><!-- Col -->
               </div>
   </div>

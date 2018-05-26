@@ -21,10 +21,10 @@
 	<?php include 'navbar.php';?>
 
 	<div class="container-fluid" style="">
-		<div class="row">
-			<div class="col-12 col-md-4 nav_lateral">
-				<div class="fecha_publicacion card">
-					<div class="titulo_div">
+		<div class="row my-4">
+			<div class="col-12 col-md-4">
+				<div class="card">
+					<div class="card-header">
 						<h2>Fecha de publicacion</h2>
 					</div>
 					<div class="cont" >
@@ -45,11 +45,11 @@
 							</div>
 					</div>
 				</div>
-				<div class="Salario card">
-					<div class="titulo_div">
+				<div class="card">
+					<div class="card-header">
 						<h2>Salario</h2>
 					</div>
-					<div class="cont">
+					<div class="card-body">
 						<form action="../php/login.php?l=salario" method="post">
 							<div class="row">
 								<label class="col-9 col-md-10" for="Salario1">Menos de $ 700.000</label><input class="col-3 col-md-2 input" id="Salario1" type="checkbox">
@@ -75,11 +75,11 @@
 						</form>
 					</div>
 				</div>
-				<div class="tipo_contrato card">
-					<div class="titulo_div">
+				<div class="card">
+					<div class="card-header">
 						<h2>Tipo de contrato</h2>
 					</div>
-					<div class="cont">
+					<div class="card-body">
 						<form action="../php/login.php?l=Tcontrato" method="post">
 							<div class="row">
 								<label class="col-9 col-md-10" for="TP1">Contrato de Obra o labor</label><input class="col-3 col-md-2 input" id="TP1" name="check" type="checkbox" value="Contrato de Obra o labor">
@@ -102,11 +102,11 @@
 						</form>
 					</div>
 				</div>
-				<div class="tipo_jornada card">
-					<div class="titulo_div">
+				<div class="card">
+					<div class="card-header">
 						<h2>Tipo de jornada</h2>
 					</div>
-					<div class="cont">
+					<div class="card-body">
 							<div class="row">
 								<label class="col-9 col-md-10 TJ" for="TJ1" action="ajax/busqueda_oferta.php?s=TJ1">Tiempo Completo</label><input class="col-3 col-md-2 input" id="TJ1" type="checkbox">
 							</div>
@@ -123,10 +123,8 @@
 				</div>
 				<button type="button" class="btn btn-primary btn-lg btn-block" id="btnMiBotonsito">ACEPTAR</button>
 			</div>
-			<div class="col-12 col-md-8 contenido">
-				<div class="contenido2">
+			<div class="col-12 col-md-8">
 					<?php include 'ajax/lista_ofertas.php'; ?>
-				</div>
 			</div>
 		</div>
 	</div>

@@ -56,7 +56,27 @@ $("#modo_espera").click(function(e){
   var id_oferta= $(this).attr('id_oferta')
   var id_aspirante= $(this).attr('id_aspirante')
   $.ajax({
-    url: "../php/lista_espera.php",
+    url: "../php/lista_espera.php?t=espera",
+    type: "POST",
+    data:{id_oferta:id_oferta,id_aspirante:id_aspirante},
+      success: function(response){
+            swal({
+              type: 'success',
+              text: response,
+              title: "Exito",
+              showConfirmButton: true,
+            }).then((result) => {
+
+            });
+      }
+  });
+});
+
+$(".listo").click(function(e){
+  var id_oferta =  $(this).attr('id_oferta')
+  var id_aspirante = $(this).attr('id_aspirante')
+  $.ajax({
+    url: "../php/lista_espera.php?t=listo",
     type: "POST",
     data:{id_oferta:id_oferta,id_aspirante:id_aspirante},
       success: function(response){

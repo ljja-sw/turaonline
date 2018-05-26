@@ -1,15 +1,12 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="en">
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<?php 
+session_start();
 
-<?php
 $titulo = "Mi Empresa";
 require "../head.php";
 
-if ( $_SESSION["loggedin"] != true ) {
- header("Location: ../index.php");}?>
+if ( $_SESSION["loggedin"] != true|| !isset($_SESSION['nit'])) {
+   header("Location: ../index.php");
+}?>
 
  <link rel="stylesheet" type="text/css" href="../css/perfil.css">   
  <body>
@@ -103,12 +100,12 @@ if ( $_SESSION["loggedin"] != true ) {
                       <div class="col-xs-5 selectContainer">
                           <select class="form-control" name="tcontrato" id="tcontrato" required>
                               <option value="">--Tipo de contrato--</option>
-                              <option value="tcol">Contrato de Obra o labor</option>
-                              <option value="tcti">Contrato a término indefinido</option>
-                              <option value="tctf">Contrato a término fijo</option>
-                              <option value="tccps">Contrato civil por prestación de servicios</option>
-                              <option value="tca">Contrato de aprendizaje</option>
-                              <option value="tcot">Contrato ocasional de trabajo</option>
+                              <option value="Obra o Labor">Contrato de Obra o labor</option>
+                              <option value="Termino Indefinido">Contrato a término indefinido</option>
+                              <option value="Termino Fijo">Contrato a término fijo</option>
+                              <option value="Prestacion de Servicios">Contrato civil por prestación de servicios</option>
+                              <option value="Aprendizaje">Contrato de aprendizaje</option>
+                              <option value="Ocacional">Contrato ocasional de trabajo</option>
                           </select>
                       </div>
                     </div>
@@ -116,10 +113,10 @@ if ( $_SESSION["loggedin"] != true ) {
                       <div class="col-xs-5 selectContainer">
                           <select class="form-control" name="tjornada" id="tjornada" required>
                               <option value="">--Tipo de jornada laboral--</option>
-                              <option value="tc">Tiempo Completo</option>
-                              <option value="tp">Tiempo Parcial</option>
-                              <option value="ph">Por Horas</option>
-                              <option value="bp">Beca/prácticas</option>
+                              <option value="Tiempo Completo">Tiempo Completo</option>
+                              <option value="Tiempo Parcial">Tiempo Parcial</option>
+                              <option value="Por Horas">Por Horas</option>
+                              <option value="Beca Practicas">Beca/prácticas</option>
                           </select>
                       </div>   
                     </div>
@@ -127,8 +124,8 @@ if ( $_SESSION["loggedin"] != true ) {
                       <div class="col-xs-5 selectContainer">
                           <select class="form-control" name="decaracter" required>
                               <option value="">--De Caracter--</option>
-                              <option value="tc">Normal</option>
-                              <option value="tp">Urgente</option>
+                              <option value="Normal">Normal</option>
+                              <option value="Urgente">Urgente</option>
                           </select>
                       </div>   
                     </div>
