@@ -130,5 +130,6 @@
 		</div>
 	</div>
 	<?php include 'footer.php'; ?>
+    <script type="text/javascript" src="js/lista_oferta.js"></script>
 </body>
 </html>

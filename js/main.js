@@ -52,19 +52,6 @@ $('#form_busqueda').submit(function(e){
     var busqueda = $("#texto_busqueda").val();
     $(location).attr('href', '../busqueda.php?b='+busqueda)});
 
-$('#nombre_oferta').change(function(e) {
-  e.preventDefault();
-  var oferta = $(this).val();
-    $.ajax({
-      url: "../php/aspirante_oferta.php",
-      type: "POST",
-      data: {oferta:oferta},
-        success: function(response){
-          $("#tabla-aspirantes-oferta").html(response)
-    }
-  })
-})
-
 });//Close JQUery
 
 
