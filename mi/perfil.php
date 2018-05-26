@@ -1,10 +1,5 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="es">
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-
 <?php
+session_start();
 $titulo = "Mi Perfíl";
 require "../head.php";
 require_once "../php/Funciones.php";
@@ -134,6 +129,48 @@ if ( $_SESSION["loggedin"] != true ) {
 
       </div><!-- Card -->
     </div><!-- Col -->
+
+              <div class="col-md-6"> <!-- Col -->
+                <div class="card"><!--Card -->
+                  <div class="card-header">
+                    <h4><strong>Lita de Ofertas</strong></h4>
+                  </div>
+                  <div class="card-body">
+<?php 
+  $id_usuario = $_SESSION['id_usuario'];
+$resultado = $f->ejecutarQuery("SELECT titulo, ofertas.id FROM ofertas INNER JOIN aspirante_oferta ON aspirante_oferta.id_oferta = ofertas.id INNER JOIN aspirantes ON aspirantes.id_usuario=$id_usuario");
+if (mysqli_num_rows($resultado)>0) {
+  while ($fila = mysqli_fetch_assoc($resultado)) {
+    $_SESSION["titulo"] = $fila['titulo'];
+  ?>
+    <div class="row">
+          <h5 class="col-md-5 my-2">
+            <strong>
+                  <?php echo $_SESSION["titulo"]; ?>
+            </strong>
+          </h5>
+
+              <ul class="nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cancelar Postulacion</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"  href="../tabla_aspirantes.php">Ver</a>
+                </li>
+              </ul>
+
+      </div>
+<?php }
+}else{?>
+  <div class="text-center my-5">
+    <h1><i class="fi-x"></i></h1>
+    <h1 class="display-4">No hay Ofertas publicadas para mostrar</h1>
+    <strong><p>Publica una oferta</p></strong>
+  </div>
+<?php }?>
+                  </div>
+                </div><!-- Card -->
+              </div><!-- Col -->
 
   </div>
 </section>

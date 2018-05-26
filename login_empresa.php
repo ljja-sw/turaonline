@@ -43,7 +43,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/mdb-bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendor/sweetalert/js/sweetalert2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/vendor/sweetalert/js/sweetalert2.all.min.js" type="text/javascript"></script>
     <script src="js/login.js"></script>
   </body>
 </html>

@@ -123,14 +123,17 @@
 				</div>
 				<button type="button" class="btn btn-primary btn-lg btn-block" id="btnMiBotonsito">ACEPTAR</button>
 			</div>
-			<div class="col-12 col-md-8 contenido" style="padding-bottom: 50px;">
+			<div class="col-12 col-md-8 contenido">
 				<div class="contenido2">
 					<?php include 'ajax/lista_ofertas.php'; ?>
 				</div>
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 	
+=======
+>>>>>>> ccc558a46127ca13bb7ac201d5b9421e5243c7ce
 	<?php include 'footer.php'; ?>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /*!
- * sweetalert2 v7.0.8
+ * sweetalert2 v7.0.0
  * Released under the MIT License.
  */
 'use strict';
@@ -105,18 +105,6 @@ var colorLuminance = function colorLuminance(hex, lum) {
   return rgb;
 };
 
-/**
- * Check if variable exists
- * @param variable
- */
-var isDefined = function isDefined(variable) {
-  return typeof variable !== 'undefined';
-};
-
-/**
- * Filter the unique values into a new array
- * @param arr
- */
 var uniqueArray = function uniqueArray(arr) {
   var result = [];
   for (var i in arr) {
@@ -163,18 +151,14 @@ var warnOnce = function warnOnce(message) {
 
 // Remember state in cases where opening and handling a modal will fiddle with it.
 var states = {
+  previousWindowKeyDown: null,
   previousActiveElement: null,
   previousBodyPadding: null
 
-  // Detect Node env
-};var isNodeEnv = function isNodeEnv() {
-  return typeof window === 'undefined' || typeof document === 'undefined';
-};
-
-/*
- * Add modal + overlay to DOM
- */
-var init = function init(params) {
+  /*
+   * Add modal + overlay to DOM
+   */
+};var init = function init(params) {
   // Clean up the old popup if it exists
   var c = getContainer();
   if (c) {
@@ -184,7 +168,7 @@ var init = function init(params) {
     removeClass(document.body, swalClasses['toast-shown']);
   }
 
-  if (isNodeEnv()) {
+  if (typeof document === 'undefined') {
     error('SweetAlert2 requires document to initialize');
     return;
   }
@@ -205,27 +189,34 @@ var init = function init(params) {
   var checkbox = popup.querySelector('.' + swalClasses.checkbox + ' input');
   var textarea = getChildByClass(popup, swalClasses.textarea);
 
-  // a11y
-  popup.setAttribute('aria-live', params.toast ? 'polite' : 'assertive');
-
-  var resetValidationError = function resetValidationError() {
-    sweetAlert.isVisible() && sweetAlert.resetValidationError();
+  input.oninput = function () {
+    sweetAlert.resetValidationError();
   };
 
-  input.oninput = resetValidationError;
-  file.onchange = resetValidationError;
-  select.onchange = resetValidationError;
-  checkbox.onchange = resetValidationError;
-  textarea.oninput = resetValidationError;
+  file.onchange = function () {
+    sweetAlert.resetValidationError();
+  };
 
   range.oninput = function () {
-    resetValidationError();
+    sweetAlert.resetValidationError();
     rangeOutput.value = range.value;
   };
 
   range.onchange = function () {
-    resetValidationError();
+    sweetAlert.resetValidationError();
     range.previousSibling.value = range.value;
+  };
+
+  select.onchange = function () {
+    sweetAlert.resetValidationError();
+  };
+
+  checkbox.onchange = function () {
+    sweetAlert.resetValidationError();
+  };
+
+  textarea.oninput = function () {
+    sweetAlert.resetValidationError();
   };
 
   return popup;
@@ -397,11 +388,6 @@ var removeStyleProperty = function removeStyleProperty(elem, property) {
 };
 
 var animationEndEvent = function () {
-  // Prevent run in Node env
-  if (isNodeEnv()) {
-    return false;
-  }
-
   var testEl = document.createElement('div');
   var transEndEventNames = {
     'WebkitAnimation': 'webkitAnimationEnd',
@@ -409,7 +395,7 @@ var animationEndEvent = function () {
     'animation': 'animationend'
   };
   for (var i in transEndEventNames) {
-    if (transEndEventNames.hasOwnProperty(i) && isDefined(testEl.style[i])) {
+    if (transEndEventNames.hasOwnProperty(i) && testEl.style[i] !== undefined) {
       return transEndEventNames[i];
     }
   }
@@ -419,12 +405,13 @@ var animationEndEvent = function () {
 
 // Reset previous window keydown handler and focued element
 var resetPrevState = function resetPrevState() {
+  window.onkeydown = states.previousWindowKeyDown;
   if (states.previousActiveElement && states.previousActiveElement.focus) {
     var x = window.scrollX;
     var y = window.scrollY;
     states.previousActiveElement.focus();
-    if (isDefined(x) && isDefined(y)) {
-      // IE doesn't have scrollX/scrollY support
+    if (x && y) {
+      // IE has no scrollX/scrollY support
       window.scrollTo(x, y);
     }
   }
@@ -496,14 +483,11 @@ var _extends = Object.assign || function (target) {
 var popupParams = _extends({}, defaultParams);
 var queue = [];
 
-var previousWindowKeyDown = void 0;
-var windowOnkeydownOverridden = void 0;
-
 /*
  * Check for the existence of Promise
  * Hopefully to avoid many github issues
  */
-if (!isDefined(Promise)) {
+if (typeof Promise === 'undefined') {
   error('This package requires a Promise library, please include a shim to enable it in this browser (See: https://github.com/limonte/sweetalert2/wiki/Migration-from-SweetAlert-to-SweetAlert2#1-ie-support)');
 }
 
@@ -545,6 +529,8 @@ var setParameters = function setParameters(params) {
   } else {
     popup = oldPopup || init(params);
   }
+
+  showWarningsForParams(params);
 
   // Set popup width
   var popupWidth = params.width === defaultParams.width && params.toast ? 'auto' : params.width;
@@ -887,12 +873,7 @@ var sweetAlert = function sweetAlert() {
     args[_key] = arguments[_key];
   }
 
-  // Prevent run in Node env
-  if (!isDefined(window)) {
-    return;
-  }
-
-  if (!isDefined(args[0])) {
+  if (args[0] === undefined) {
     error('SweetAlert2 expects at least 1 attribute!');
     return false;
   }
@@ -908,14 +889,13 @@ var sweetAlert = function sweetAlert() {
       break;
 
     case 'object':
-      showWarningsForParams(args[0]);
       _extends(params, args[0]);
       params.extraParams = args[0].extraParams;
 
       if (params.input === 'email' && params.inputValidator === null) {
         var inputValidator = function inputValidator(email) {
           return new Promise(function (resolve, reject) {
-            var emailRegex = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9-]{2,24}$/;
+            var emailRegex = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
             if (emailRegex.test(email)) {
               resolve();
             } else {
@@ -1234,12 +1214,8 @@ var sweetAlert = function sweetAlert() {
       var arrowKeys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Left', 'Right', 'Up', 'Down' // IE11
       ];
 
-      if (e.key === 'Enter' && !e.isComposing) {
+      if (e.key === 'Enter') {
         if (e.target === getInput()) {
-          if (e.target.tagName.toLowerCase() === 'textarea') {
-            return; // do not submit
-          }
-
           sweetAlert.clickConfirm();
           e.preventDefault();
         }
@@ -1283,14 +1259,8 @@ var sweetAlert = function sweetAlert() {
       }
     };
 
-    if (params.toast && windowOnkeydownOverridden) {
-      window.onkeydown = previousWindowKeyDown;
-      windowOnkeydownOverridden = false;
-    }
-
-    if (!params.toast && !windowOnkeydownOverridden) {
-      previousWindowKeyDown = window.onkeydown;
-      windowOnkeydownOverridden = true;
+    if (!window.onkeydown || window.onkeydown.toString() !== handleKeyDown.toString()) {
+      states.previousWindowKeyDown = window.onkeydown;
       window.onkeydown = handleKeyDown;
     }
 
@@ -1642,17 +1612,15 @@ sweetAlert.queue = function (steps) {
         document.body.setAttribute('data-swal2-queue-step', i);
 
         sweetAlert(queue[i]).then(function (result) {
-          if (isDefined(result.value)) {
-            queueResult.push(result.value);
-            step(i + 1, callback);
-          } else {
-            resetQueue();
-            resolve({ dismiss: result.dismiss });
-          }
+          queueResult.push(result);
+          step(i + 1, callback);
+        }, function (error$$1) {
+          resetQueue();
+          reject(error$$1);
         });
       } else {
         resetQueue();
-        resolve({ value: queueResult });
+        resolve(queueResult);
       }
     })(0);
   });
@@ -1679,7 +1647,7 @@ sweetAlert.insertQueueStep = function (step, index) {
  * Global function for deleting a popup from the queue
  */
 sweetAlert.deleteQueueStep = function (index) {
-  if (isDefined(queue[index])) {
+  if (typeof queue[index] !== 'undefined') {
     queue.splice(index, 1);
   }
 };
@@ -1699,8 +1667,6 @@ sweetAlert.close = sweetAlert.closePopup = sweetAlert.closeModal = sweetAlert.cl
 
   if (!isToast()) {
     resetPrevState();
-    window.onkeydown = previousWindowKeyDown;
-    windowOnkeydownOverridden = false;
   }
 
   var removePopupAndResetState = function removePopupAndResetState() {
@@ -1833,9 +1799,9 @@ sweetAlert.adaptInputValidator = function (legacyValidator) {
 
 sweetAlert.noop = function () {};
 
-sweetAlert.version = '7.0.8';
+sweetAlert.version = '7.0.0';
 
 sweetAlert.default = sweetAlert;
 
 module.exports = sweetAlert;
-if (typeof window !== 'undefined' && window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
+if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;

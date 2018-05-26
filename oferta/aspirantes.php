@@ -36,14 +36,16 @@ $f = new Funciones();?>
 	<div class="card p-2 m-5">
 	    <!--Grid row-->
 	    <div class="row">
-	    <?php 	$resultado = $f->ejecutarQuery("SELECT titulo FROM ofertas WHERE id_empresa = ".$_SESSION['id_empresa']); ?>
+	    <?php 	$resultado = $f->ejecutarQuery("SELECT titulo,id FROM ofertas WHERE id_empresa = ".$_SESSION['id_empresa']); ?>
             <!--Grid column-->
-	        <div class="col-lg-3 col-md-6">
+	        <div class="col-lg-3 col-md-6 mx-auto">
 	            <!--Blue select-->
-	            <select class="form-control mdb-select colorful-select dropdown-primary mx-2">
+	            <select id="nombre_oferta" class="form-control mdb-select colorful-select dropdown-primary mx-2">
 	                <option value="" disabled selected>Tus Ofertas</option>
 	                	<?php while($filas = mysqli_fetch_assoc($resultado)){ ?>
-	                <option value="1"><?php echo $filas['titulo']; ?></option>
+	                <option value="<?php echo $filas['id'] ?>">
+	                	<?php echo $filas['titulo']; ?>
+	                </option>
 	                	<?php } ?>
 	            </select>
 	            <!--/Blue select-->
@@ -51,7 +53,7 @@ $f = new Funciones();?>
 	        <!--Grid column-->
             
 	        <!--Grid column-->
-	        <div class="col-lg-3 col-md-6">
+	        <div class="col-lg-3 col-md-6 mx-auto">
 	            <form class="form-inline mt-2 ml-2">
 	                <input class="form-control my-0 py-0" type="text" placeholder="Search" style="max-width: 150px;">
 	                <button class="btn btn-sm btn-primary ml-2 px-1"><i class="fa fa-search"></i>  </button>
@@ -65,19 +67,59 @@ $f = new Funciones();?>
 	<!--Top Table UI-->
 	<div class="card card-cascade narrower">
 	    <!--Card image-->
-	    <div class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center bg-pagina">
-	        <div>
-	            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fa fa-th-large mt-0"></i></button>
-	            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fa fa-columns mt-0"></i></button>
-	        </div>
-	        <a href="" class="white-text mx-3">Aspirantes</a>
-	        <div>
-	            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fa fa-pencil mt-0"></i></button>
-	            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fa fa-remove mt-0"></i></button>
-	            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fa fa-info-circle mt-0"></i></button>
-	        </div>
+	    <div class="view card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center ">
+	        <h3 class="mx-auto">Aspirantes</h3>
 	    </div>
-<?php include "../php/aspirante_oferta.php" ?>
+	    <div class="px-4">
+	        <div class="table-wrapper" id="tabla-aspirantes-oferta">
+				<?php include "../php/aspirante_oferta.php" ?>
+	        </div>
+	        <!--Bottom Table UI-->
+	        <div class="d-flex justify-content-between col-lg-12 col-md-12">
+	            <!--Name-->
+	            <select id="limite" class="form-control col-lg-2 col-md-2 mdb-select colorful-select dropdown-primary mt-2 hidden-md-down">
+	                <option value="" disabled >Numero de Aspirantes</option>
+	                <option value="10" selected>10</option>
+	                <option value="25">25</option>
+	                <option value="50">50</option>
+	                <option value="100">100</option>
+	            </select>
+
+	            <!--Pagination -->
+	            <nav class="my-4">
+	                <ul class="float-right pagination pagination-circle pg-blue mb-0">
+	                    <!--First-->
+	                    <li class="page-item disabled"><a class="page-link">First</a></li>
+
+	                    <!--Arrow left-->
+	                    <li class="page-item disabled">
+	                        <a class="page-link" aria-label="Previous">
+	                        <span aria-hidden="true">&laquo;</span>
+	                        <span class="sr-only">Previous</span>
+	                    </a>
+	                    </li>
+	                    <!--Numbers-->
+	                    <li class="page-item active"><a class="page-link">1</a></li>
+	                    <li class="page-item"><a class="page-link">2</a></li>
+	                    <li class="page-item"><a class="page-link">3</a></li>
+	                    <li class="page-item"><a class="page-link">4</a></li>
+	                    <li class="page-item"><a class="page-link">5</a></li>
+	                    <!--Arrow right-->
+	                    <li class="page-item">
+	                        <a class="page-link" aria-label="Next">
+	                        <span aria-hidden="true">&raquo;</span>
+	                        <span class="sr-only">Next</span>
+	                    </a>
+	                    </li>
+	                    <!--First-->
+	                    <li class="page-item"><a class="page-link">Last</a></li>
+	                </ul>
+	            </nav>
+	            <!--/Pagination -->
+
+		</div>
+	    </div>
+
 	</div>
 </div>
 	<?php include '../footer.php'; ?>

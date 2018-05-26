@@ -141,7 +141,7 @@
     <script type="text/javascript" src="/vendor/mdb-bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/vendor/mdb-bootstrap/js/mdb.min.js"></script>
     <script type="text/javascript" src="/vendor/mdb-bootstrap/js/popper.min.js"></script>
-    <script type="text/javascript" src="/vendor/sweetalert/js/sweetalert2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/vendor/sweetalert/js/sweetalert2.all.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>

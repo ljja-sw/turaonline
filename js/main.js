@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-$('#filtro_sectores a').on('click', function(e){
+$('#filtro_sectores a').click(function(e){
   e.preventDefault();
   sector = this.id;
     $.ajax({
@@ -10,15 +10,18 @@ $('#filtro_sectores a').on('click', function(e){
         success: function(response){
           $("#empresas").html(response)
     }
-  });
+  });});
+
+$("#atras").click(function(e){
+      parent.history.back();
 });
 
-  $('#fecha_vencimiento').datepicker({    
+$('#fecha_vencimiento').datepicker({    
     format: 'dd/mm/yyyy',
     autoclose: true,
     language: 'es'});
 
-  $('#cerrar_sesion').on('click', function(e) {
+$('#cerrar_sesion').click(function(e) {
     e.preventDefault();
     swal({
       title: "¿Cerrar Sesión?",
@@ -44,11 +47,27 @@ $('#filtro_sectores a').on('click', function(e){
         result.dismiss === swal.DismissReason.cancel) {
       }});});
 
-  $('#form_busqueda').submit(function(e){
+$('#form_busqueda').submit(function(e){
     e.preventDefault();
     var busqueda = $("#texto_busqueda").val();
-    $(location).attr('href', '../busqueda.php?b='+busqueda)
-  });
+    $(location).attr('href', '../busqueda.php?b='+busqueda)});
 
+$('#nombre_oferta').change(function(e) {
+  e.preventDefault();
+  var oferta = $(this).val();
+    $.ajax({
+      url: "../php/aspirante_oferta.php",
+      type: "POST",
+      data: {oferta:oferta},
+        success: function(response){
+          $("#tabla-aspirantes-oferta").html(response)
+    }
+  })
+})
 
 });//Close JQUery
+
+
+function swalPrueba(texto,tipo){
+      swal(texto,tipo,'success')
+}
