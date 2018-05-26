@@ -118,14 +118,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-8 contenido" style="padding-bottom: 50px;">
+			<div class="col-12 col-md-8 contenido">
 				<div class="contenido2">
 					<?php include 'ajax/lista_ofertas.php'; ?>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<?php include 'footer.php'; ?>
 </body>
 </html>

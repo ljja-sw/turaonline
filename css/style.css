@@ -9,6 +9,14 @@
   height: 300px;
 }
 
+.justify-text{
+  text-align: justify;
+}
+
+.text-bold{
+  font-weight: bold;
+}
+
 .avatar{
   padding-left: 3px;
   padding-right: 3px;

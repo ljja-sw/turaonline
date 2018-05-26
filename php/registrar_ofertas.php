@@ -16,6 +16,8 @@ include_once '../php/conexion_db.php';
 	$tipo = mysqli_real_escape_string($link,$_POST['decaracter']);
 	$estado_oferta	= "Activo";
 
+	
+
 	$sql = "INSERT INTO ofertas (id_empresa, titulo, descripcion, estudios, experiencia, salario, jornadaLaboral, tipoContrato,tipo,estado_oferta) VALUES ('".$idEmpresa."','".$titulo."','".$descripcion."','".$estudios."', '".$experiencia."', ".$salario.", '".$jornadaLaboral."', '".$tipoContrato."', '".$tipo."', '".$estado_oferta."');";
 
 	$resultado = mysqli_query($link,$sql);

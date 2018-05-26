@@ -93,13 +93,10 @@ function bOfertaFP($valor){
 						<small>hace 1 hora(s)</small>
 					</div>
 					<div class="col">
-						<a class="btn btn-outline-pagina" data-toggle="modal" data-target="#MasInformacion">Ver Oferta</a>
-					</div>
-					<!-- Modal -->
-					
+						<a href="#"	class="btn btn-outline-pagina" href="../oferta/aplicar.php?o=<?php echo $fila['id']?>">Ver Oferta</a>
+					</div>			
 				</div>
 			</div>
-
 	<?php }
 	}else{?>
 		<div class="text-center my-5">
@@ -115,7 +112,7 @@ function bOfertaFPSinValor(){
 	include 'php/Funciones.php';
   	$f = new Funciones();
 
-	$query = "SELECT titulo,ofertas.descripcion,empresas.nombre,empresas.nit,ofertas.descripcion FROM ofertas INNER JOIN empresas ON ofertas.id_empresa = empresas.id";
+	$query = "SELECT titulo,ofertas.descripcion,empresas.nombre,empresas.nit,ofertas.descripcion,ofertas.id FROM ofertas INNER JOIN empresas ON ofertas.id_empresa = empresas.id";
 
 	$resultado = $f->ejecutarQuery($query);
 	clearstatcache();
@@ -144,7 +141,7 @@ function bOfertaFPSinValor(){
 						<small>hace 1 hora(s)</small>
 					</div>
 					<div class="col">
-						<a class="btn btn-outline-pagina" data-toggle="modal" data-target="#MasInformacion">Ver Oferta</a>
+						<a class="btn btn-outline-pagina" href="../oferta/aplicar.php?o=<?php echo $fila['id']?>">Ver Oferta</a>
 					</div>
 					<!-- Modal -->
 					
