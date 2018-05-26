@@ -51,6 +51,18 @@ $f = new Funciones();?>
 	            <!--/Blue select-->
 	        </div>
 	        <!--Grid column-->
+	                    <!--Grid column-->
+	        <div class="col-lg-3 col-md-6 mx-auto">
+	            <!--Blue select-->
+	            <select id="estado_aspirante" class="form-control mdb-select colorful-select dropdown-primary mx-2">
+	                <option value="" disabled selected>Estado</option>
+	                <option value="">Todos</option>
+	                <option value="Postulado">Postulado</option>
+	                <option value="En Espera">En Espera</option>
+	            </select>
+	            <!--/Blue select-->
+	        </div>
+	        <!--Grid column-->
             
 	        <!--Grid column-->
 	        <div class="col-lg-3 col-md-6 mx-auto">
@@ -123,5 +135,6 @@ $f = new Funciones();?>
 	</div>
 </div>
 	<?php include '../footer.php'; ?>
+	<script src="../js/ofertas.js" type="text/javascript"></script>
 </body>
 </html>

@@ -38,5 +38,38 @@ $("#aplicar_oferta").click(function(e){
 })
 });
 
+$('#nombre_oferta,#estado_aspirante').change(function(e) {
+  e.preventDefault();
+  var oferta = $("#nombre_oferta").val();
+  var estado = $("#estado_aspirante").val();
+    $.ajax({
+      url: "../php/aspirante_oferta.php",
+      type: "POST",
+      data: {oferta:oferta , estado:estado},
+        success: function(response){
+          $("#tabla-aspirantes-oferta").html(response)
+    }
+  })
+})
+
+$("#modo_espera").click(function(e){
+  var id_oferta= $(this).attr('id_oferta')
+  var id_aspirante= $(this).attr('id_aspirante')
+  $.ajax({
+    url: "../php/lista_espera.php",
+    type: "POST",
+    data:{id_oferta:id_oferta,id_aspirante:id_aspirante},
+      success: function(response){
+            swal({
+              type: 'success',
+              text: response,
+              title: "Exito",
+              showConfirmButton: true,
+            }).then((result) => {
+
+            });
+      }
+  });
+});
 
 });//Close JQuery

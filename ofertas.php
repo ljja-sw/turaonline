@@ -130,10 +130,7 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-	
-=======
->>>>>>> ccc558a46127ca13bb7ac201d5b9421e5243c7ce
 	<?php include 'footer.php'; ?>
+    <script type="text/javascript" src="js/lista_oferta.js"></script>
 </body>
 </html>

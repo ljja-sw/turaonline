@@ -45,7 +45,7 @@ if ( $_SESSION["loggedin"] != true ) {
       <div class="card"><!--Card-->
 
         <div class="card-header principal">
-          <h4><strong>Información</strong></h4>
+          <h4><strong>Información</strong><i class="fa fa-location-arrow float-right"></i></h4>
         </div>
 
         <div id="panel_informacion" class="card-body">
@@ -66,7 +66,7 @@ if ( $_SESSION["loggedin"] != true ) {
     <div class="col-md-7 my-auto"> <!-- Perfil laboral-->
       <div class="card"><!--Card -->
         <div class="card-header principal">
-          <h4><strong>Perfil laboral</strong></h4>
+          <h4><strong>Perfil laboral</strong><i class="fa fa-user float-right"></i></h4>
         </div>
         <div class="card-body">
 
@@ -105,8 +105,7 @@ if ( $_SESSION["loggedin"] != true ) {
                   <i class="fa fa-upload"></i><br>
                   Seleccionar Archivo
                 </a>
-                                <p class="small">Tamaño Máximo <b>2048KB aprx</b> </p>
-<br>
+            <p class="small">Tamaño Máximo <b>2048KB aprx</b> </p><br>
               <p>Ultima actualización: <?php 
                   $r = $f->ejecutarQuery("SELECT fecha_carga,directorio from hv_aspirantes where id_aspirante =".$_SESSION['id_usuario']);
                   $fila = mysqli_fetch_assoc($r);
@@ -133,7 +132,7 @@ if ( $_SESSION["loggedin"] != true ) {
               <div class="col-md-6"> <!-- Col -->
                 <div class="card"><!--Card -->
                   <div class="card-header">
-                    <h4><strong>Lita de Ofertas</strong></h4>
+                    <h4><strong>Lita de Ofertas</strong><i class="fa fa-list-ol float-right"></i></h4>
                   </div>
                   <div class="card-body">
 <?php 
@@ -155,7 +154,7 @@ if (mysqli_num_rows($resultado)>0) {
                   <a class="nav-link" href="#">Cancelar Postulacion</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link"  href="../tabla_aspirantes.php">Ver</a>
+                  <a class="nav-link"  href="#">Ver</a>
                 </li>
               </ul>
 
@@ -170,8 +169,18 @@ if (mysqli_num_rows($resultado)>0) {
 <?php }?>
                   </div>
                 </div><!-- Card -->
-              </div><!-- Col -->
 
+                    <div class="card">
+    <div class="card-header bg-danger">
+      <h4><strong>Eliminar Cuenta</strong><i class="fa fa-trash float-right"></i></h4>
+    </div>
+    <div class="card-body mx-auto">
+    <button type="button" class="btn btn-danger">Eliminar Cuenta</button>
+    </div>
+    </div>
+
+              </div><!-- Col -->
+              </div>
   </div>
 </section>
 <?php include "../footer.php" ?>
