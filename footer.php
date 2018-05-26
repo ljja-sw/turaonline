@@ -145,4 +145,5 @@
     <script type="text/javascript" src="/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="js/lista_oferta.js"></script>
     <!--/.Scripts-->

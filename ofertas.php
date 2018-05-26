@@ -6,6 +6,12 @@
 <script type="text/javascript" src="js/ofertas.js"></script>
 
 <?php
+	if (isset($_GET['s'])) {
+	$boferta = $_GET['s'];
+	} else {
+		$boferta = "";
+	}
+
 	$titulo = "Ofertas";
 	require "head.php"; 
 ?>
@@ -22,23 +28,21 @@
 						<h2>Fecha de publicacion</h2>
 					</div>
 					<div class="cont" >
-						<form action="../php/login.php?l=Fpublicacion" method="post">
 							<div class="row">
-								<label class="col-9 col-md-10" for="hoy" action="ajax/busqueda_oferta.php?s=hoy">Hoy</label><input class="col-3 col-md-2 inputChe" id="hoy" type="checkbox" checked="select1">
+									<label class="col-9 col-md-10" for="check1" >Hoy</label> <input class="col-3 col-md-2 inputChe" action="js/lista_oferta.js" id="check1" type="checkbox" value="hoy">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="U2D" action="ajax/busqueda_oferta.php?s=U2D">Último 2 días</label><input class="col-3 col-md-2 input" id="U2D" type="checkbox" checked="select2">
+								<label class="col-9 col-md-10" for="check2" action="ajax/busqueda_oferta.php?s=U2D">Último 2 días</label><input class="col-3 col-md-2 input" id="check2" type="checkbox" value="Último 2 días">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="US" action="ajax/busqueda_oferta.php?s=US">Última samana</label><input class="col-3 col-md-2 input" id="US" type="checkbox" checked="select3">
+								<label class="col-9 col-md-10" for="check3" action="ajax/busqueda_oferta.php?s=US">Última samana</label><input class="col-3 col-md-2 input" id="check3" type="checkbox" value="Última samana">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="U15D" action="ajax/busqueda_oferta.php?s=U15D">Últimos 15 días</label><input class="col-3 col-md-2 input" id="U15D" type="checkbox" checked="select4">
+								<label class="col-9 col-md-10" for="check4" action="ajax/busqueda_oferta.php?s=U15D">Últimos 15 días</label><input class="col-3 col-md-2 input" id="check4" type="checkbox">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="UM" action="ajax/busqueda_oferta.php?s=UM">Último mes</label><input class="col-3 col-md-2 input" id="UM" type="checkbox" checked="select5">
+								<label class="col-9 col-md-10" for="check5" action="ajax/busqueda_oferta.php?s=UM">Último mes</label><input class="col-3 col-md-2 input" id="check5" type="checkbox">
 							</div>
-						</form>
 					</div>
 				</div>
 				<div class="Salario card">
@@ -78,22 +82,22 @@
 					<div class="cont">
 						<form action="../php/login.php?l=Tcontrato" method="post">
 							<div class="row">
-								<label class="col-9 col-md-10" for="TP1">Contrato de Obra o labor</label><input class="col-3 col-md-2 input" id="TP1" type="checkbox">
+								<label class="col-9 col-md-10" for="TP1">Contrato de Obra o labor</label><input class="col-3 col-md-2 input" id="TP1" name="check" type="checkbox" value="Contrato de Obra o labor">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="TP2">Contrato a término indefinido</label><input class="col-3 col-md-2 input" id="TP2" type="checkbox">
+								<label class="col-9 col-md-10" for="TP2">Contrato a término indefinido</label><input class="col-3 col-md-2 input" name="check" id="TP2" type="checkbox" value="Contrato a término indefinido">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="TP3">Contrato a término fijo</label><input class="col-3 col-md-2 input" id="TP3" type="checkbox">
+								<label class="col-9 col-md-10" for="TP3">Contrato a término fijo</label><input class="col-3 col-md-2 input" name="check" id="TP3" type="checkbox" value="Contrato a término fijo">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="TP4">Contrato civil por prestación de servicios</label><input class="col-3 col-md-2 input" id="TP4" type="checkbox">
+								<label class="col-9 col-md-10" for="TP4">Contrato civil por prestación de servicios</label><input class="col-3 col-md-2 input" name="check" id="TP4" type="checkbox" value="ontrato civil por prestación de servicios">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="TP5">Contrato de aprendizaje</label><input class="col-3 col-md-2 input" id="TP5" type="checkbox">
+								<label class="col-9 col-md-10" for="TP5">Contrato de aprendizaje</label><input type="checkbox" class="col-3 col-md-2 input" name="check" id="TP5" value="Contrato de aprendizaje">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="TP6">Contrato ocasional de trabajo</label><input class="col-3 col-md-2 input" id="TP6" type="checkbox">
+								<label class="col-9 col-md-10" for="TP6">Contrato ocasional de trabajo</label><input class="col-3 col-md-2 input" name="check" id="TP6" type="checkbox" value="Contrato ocasional de trabajo">
 							</div>
 						</form>
 					</div>
@@ -104,19 +108,20 @@
 					</div>
 					<div class="cont">
 							<div class="row">
-								<label class="col-9 col-md-10" for="TJ1" action="ajax/busqueda_oferta.php?s=TJ1">Tiempo Completo</label><input class="col-3 col-md-2 input" id="TJ1" type="checkbox">
+								<label class="col-9 col-md-10 TJ" for="TJ1" action="ajax/busqueda_oferta.php?s=TJ1">Tiempo Completo</label><input class="col-3 col-md-2 input" id="TJ1" type="checkbox">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="TJ2" action="ajax/busqueda_oferta.php?s=TJ2">Tiempo Parcial</label><input class="col-3 col-md-2 input" id="TJ2" type="checkbox">
+								<label class="col-9 col-md-10 TJ" for="TJ2" action="ajax/busqueda_oferta.php?s=TJ2">Tiempo Parcial</label><input class="col-3 col-md-2 input" id="TJ2" type="checkbox">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="TJ3" action="ajax/busqueda_oferta.php?s=TJ3">Por Horas</label><input class="col-3 col-md-2 input" id="TJ3" type="checkbox">
+								<label class="col-9 col-md-10 TJ" for="TJ3" action="ajax/busqueda_oferta.php?s=TJ3">Por Horas</label><input class="col-3 col-md-2 input" id="TJ3" type="checkbox">
 							</div>
 							<div class="row">
-								<label class="col-9 col-md-10" for="TJ4" action="ajax/busqueda_oferta.php?s=TJ4">Beca/prácticas</label><input class="col-3 col-md-2 input" id="TJ4" type="checkbox">
+								<label class="col-9 col-md-10 TJ" for="TJ4" action="ajax/busqueda_oferta.php?s=TJ4">Beca/prácticas</label><input class="col-3 col-md-2 input" id="TJ4" type="checkbox" onclick="buscarpp();">
 							</div>
 					</div>
 				</div>
+				<button type="button" class="btn btn-primary btn-lg btn-block" id="btnMiBotonsito">ACEPTAR</button>
 			</div>
 			<div class="col-12 col-md-8 contenido" style="padding-bottom: 50px;">
 				<div class="contenido2">
@@ -125,7 +130,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<?php include 'footer.php'; ?>
 </body>
 </html>
